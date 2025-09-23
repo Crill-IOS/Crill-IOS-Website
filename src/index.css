@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 216 19% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 216 19% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 216 19% 16%;
+
+    /* Crill-inspired coral/orange color scheme */
+    --primary: 14 86% 58%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 20 100% 96%;
+    --secondary-foreground: 14 86% 58%;
+
+    --muted: 20 20% 95%;
+    --muted-foreground: 216 19% 45%;
+
+    --accent: 16 100% 66%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 20 20% 90%;
+    --input: 20 20% 90%;
+    --ring: 14 86% 58%;
+
+    /* Custom design tokens */
+    --coral: 14 86% 58%;
+    --coral-light: 16 100% 66%;
+    --coral-dark: 12 80% 48%;
+    --orange-warm: 24 95% 65%;
+    --red-warm: 8 85% 62%;
+    
+    /* Gradients */
+    --gradient-coral: linear-gradient(135deg, hsl(var(--coral)) 0%, hsl(var(--coral-light)) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(var(--orange-warm)) 0%, hsl(var(--coral)) 50%, hsl(var(--red-warm)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    
+    /* Shadows */
+    --shadow-coral: 0 10px 30px -10px hsl(var(--coral) / 0.3);
+    --shadow-warm: 0 8px 25px -8px hsl(var(--orange-warm) / 0.4);
+    --shadow-soft: 0 4px 20px -4px hsl(216 19% 16% / 0.1);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 216 19% 9%;
+    --foreground: 0 0% 95%;
+
+    --card: 216 19% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 216 19% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 14 86% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 216 19% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 216 19% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 16 100% 66%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 216 19% 20%;
+    --input: 216 19% 20%;
+    --ring: 14 86% 58%;
+    
+    /* Dark mode gradients */
+    --gradient-coral: linear-gradient(135deg, hsl(var(--coral)) 0%, hsl(var(--coral-light)) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(var(--orange-warm)) 0%, hsl(var(--coral)) 50%, hsl(var(--red-warm)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    
+    /* Dark shadows */
+    --shadow-coral: 0 10px 30px -10px hsl(var(--coral) / 0.5);
+    --shadow-warm: 0 8px 25px -8px hsl(var(--orange-warm) / 0.6);
+    --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* Custom component styles using design tokens */
+  .hero-gradient {
+    background: var(--gradient-coral);
+  }
+  
+  .warm-gradient {
+    background: var(--gradient-warm);
+  }
+  
+  .subtle-gradient {
+    background: var(--gradient-subtle);
+  }
+  
+  .coral-shadow {
+    box-shadow: var(--shadow-coral);
+  }
+  
+  .warm-shadow {
+    box-shadow: var(--shadow-warm);
+  }
+  
+  .soft-shadow {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      box-shadow: 0 0 20px hsl(var(--coral) / 0.3);
+    }
+    to {
+      box-shadow: 0 0 30px hsl(var(--coral) / 0.6);
+    }
+  }
+}
