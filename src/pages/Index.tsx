@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import FeatureCard from "@/components/FeatureCard";
 import TeamMember from "@/components/TeamMember";
 import ShrimpAnimation from "@/components/ShrimpAnimation";
+
 import { 
   Code, 
   Zap, 
@@ -96,10 +97,14 @@ const Index = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button asChild size="lg" variant="hero" className="text-lg px-8"></Button>
+              <Button asChild size="lg" variant="hero" className="text-lg px-8">
+                <a href="/playground">
+                  Live Demo ausprobieren
+                </a>
+              </Button>
               
               <Button asChild size="lg" variant="outline" className="text-lg px-8">
-                <a /*href=""*/ target="_blank" rel="noopener noreferrer">
+                <a href="#" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-5 w-5" />
                   VS Code Marketplace
                 </a>
@@ -214,6 +219,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+
 
       {/* CTA Section */}
       <section className="py-20 hero-gradient text-white">

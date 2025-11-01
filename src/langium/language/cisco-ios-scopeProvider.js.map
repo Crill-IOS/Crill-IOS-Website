@@ -1,0 +1,1 @@
+{"version":3,"file":"cisco-ios-scopeProvider.js","sourceRoot":"","sources":["../../src/language/cisco-ios-scopeProvider.ts"],"names":[],"mappings":"AAAA,OAAO,EACH,oBAAoB,GAGvB,MAAM,SAAS,CAAC;AAEjB,MAAM,OAAO,qBAAsB,SAAQ,oBAAoB;IAElD,QAAQ,CAAC,OAAsB;QACpC,OAAO,KAAK,CAAC,QAAQ,CAAC,OAAO,CAAC,CAAC;IACnC,CAAC;CAGJ"}
