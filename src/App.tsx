@@ -12,13 +12,31 @@ import Playground from "./pages/Playground";
 
 const queryClient = new QueryClient();
 
+// Bestimme den basename für React Router basierend auf der URL
+// Für Custom Domain (crillios.com): kein basename
+// Für GitHub Pages Subpath (/Crill-IOS-Website/): basename = '/Crill-IOS-Website'
+const getBasename = () => {
+  if (typeof window !== 'undefined') {
+    // Prüfe ob wir auf der Custom Domain sind (crillios.com)
+    const hostname = window.location.hostname;
+    if (hostname === 'crillios.com' || hostname === 'www.crillios.com') {
+      return '';
+    }
+    // Prüfe ob wir im GitHub Pages Subpath sind
+    if (window.location.pathname.startsWith('/Crill-IOS-Website/')) {
+      return '/Crill-IOS-Website';
+    }
+  }
+  return '';
+};
+
 const App = () => (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter>
+          <BrowserRouter basename={getBasename()}>
             <div className="min-h-screen flex flex-col">
               <Header />
               <main className="flex-1">

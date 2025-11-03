@@ -5,6 +5,10 @@ import importMetaUrlPlugin from '@codingame/esbuild-import-meta-url-plugin';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // Für Custom Domain (crillios.com) verwenden wir '/' als base path
+  // Für GitHub Pages Subpath: '/Crill-IOS-Website/' (falls keine Custom Domain verwendet wird)
+  // Für lokale Entwicklung bleibt es '/'
+  base: process.env.USE_CUSTOM_DOMAIN === 'true' ? '/' : (process.env.GITHUB_PAGES === 'true' ? '/Crill-IOS-Website/' : '/'),
   server: {
     host: "localhost",
     port: 8080,
