@@ -1,0 +1,18 @@
+{
+  "name": "cisco-ios",
+  "scopeName": "source.cisco-ios",
+  "fileTypes": [
+    ".ios"
+  ],
+  "patterns": [
+    {
+      "name": "keyword",
+      "match": "\\b(configure|interface|line|exit|router)\\b"
+    },
+    {
+      "name": "variable",
+      "match": "\\b(hostname|username|banner|ip|crypto|exec-timeout|login|logging|no)\\b"
+    }
+  ],
+  "repository": {}
+}
