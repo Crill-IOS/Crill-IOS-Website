@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X, Sparkles, BookText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "./ThemeToggle";
 
@@ -15,6 +15,13 @@ const Header = () => {
       icon: Sparkles,
       external: true,
     },
+
+    {
+      name: "Dokumentation",
+      href: "https://docs.crillios.com",
+      icon: BookText,
+      external: true,
+    }
   ];
 
   const isActive = (path: string) => location.pathname === path;
