@@ -1,4 +1,4 @@
-import { Github, ExternalLink, Mail } from "lucide-react";
+import { Github, ExternalLink, Mail, BookText } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -39,6 +39,14 @@ const Footer = () => {
               >
                 <ExternalLink className="h-4 w-4" />
                 <span>VS Code Marketplace</span>
+              </a>
+
+              <a
+                href="https://docs.crillios.com"
+                className="flex items-center space-x-2 text-muted-foreground hover:text-coral transition-colors text-sm"
+              >
+                <BookText className="h-4 w-4" />
+                <span>Dokumentation</span>
               </a>
             </div>
           </div>
