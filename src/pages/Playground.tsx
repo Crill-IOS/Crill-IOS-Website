@@ -14,7 +14,7 @@ const Playground  = () => {
             </p>
           </div>
           <div className="max-w-6xl mx-auto">
-            <div className="border rounded-lg overflow-hidden shadow-lg" style={{ height: '600px' }}>
+            <div className="border rounded-lg shadow-lg" style={{ height: '600px' }}>
                 <MonacoEditor className="w-full h-full" />
             </div>
           </div>
