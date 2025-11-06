@@ -13,7 +13,7 @@ export const setupConfigExtended = (initialCode?: string): UserConfig => {
             editorAppConfig: {
                 $type: 'extended',
                 languageId: 'cisco-ios',
-                code: initialCode || `# Teste Crill-IOS hier!`,
+                code: initialCode || `# Test Grundkonfiguration\n\nconfigure terminal\nno ip domain-lookup\nhostname R1\n\ninterface gigabitethernet 0/0\nno shutdown\nip address 192.168.1.254 255.255.255.0\ndescription To_SW1\nexit\n\n`,
                 useDiffEditor: false,
                 extensions: [{
                     config: {
