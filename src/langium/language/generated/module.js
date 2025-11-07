@@ -7,7 +7,7 @@ import { CiscoIOSGrammar } from './grammar.js';
 export const CiscoIOSLanguageMetaData = {
     languageId: 'cisco-ios',
     fileExtensions: ['.ios'],
-    caseInsensitive: false,
+    caseInsensitive: true,
     mode: 'development'
 };
 export const CiscoIosGeneratedSharedModule = {

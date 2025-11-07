@@ -1,4 +1,4 @@
-import { isIP_cmd_interface, isIp_cmd_option_address, isLine_ExecTimeoutValue, isExit, } from './generated/ast.js';
+import { isIP_cmd_interface, isIp_cmd_option_address, isLine_ExecTimeoutValue, isExit, isKEYWORDS, } from './generated/ast.js';
 import { AstUtils } from 'langium';
 import * as ipaddr from "ipaddr.js";
 /**
@@ -125,7 +125,15 @@ export class CiscoIosValidator {
      * ^this thows an error since delim: <#> is inside the message
      */
     checkBANNER_MESSAGE(BANNER_MESSAGE, accept) {
-        let message = BANNER_MESSAGE.message.join("");
+        let message = "";
+        for (let str of BANNER_MESSAGE.message) {
+            if (isKEYWORDS(str)) {
+                message = message + str.keywords;
+            }
+            else {
+                message = message + str;
+            }
+        }
         const delim1 = message.at(0);
         const delim2 = message.charAt(message.length - 1);
         if (delim1 != delim2) {

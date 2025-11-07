@@ -87,7 +87,7 @@ export function isIncomingOption(item) {
     return item === 'incoming';
 }
 export function isINPUT(item) {
-    return isKEYWORDS(item) || (typeof item === 'string' && (/[A-Za-z0-9\-_.]*[A-Za-z][A-Za-z0-9\-_.]*/.test(item)));
+    return (typeof item === 'string' && (/[A-Za-z0-9\-_.]*[A-Za-z][A-Za-z0-9\-_.]*/.test(item)));
 }
 export const Interface_fastethernet_cmds = 'Interface_fastethernet_cmds';
 export function isInterface_fastethernet_cmds(item) {
@@ -116,9 +116,6 @@ export function isIp_cmd_options(item) {
 export const Key_cmd_option = 'Key_cmd_option';
 export function isKey_cmd_option(item) {
     return reflection.isInstance(item, Key_cmd_option);
-}
-export function isKEYWORDS(item) {
-    return item === 'bgp' || item === 'router-id' || item === 'neighbor' || item === 'remote-as' || item === 'update-source' || item === 'gigabitethernet' || item === 'fastethernet' || item === '/' || item === '.' || item === 'ebgp-multihop' || item === 'next-hop-self' || item === 'route-reflector-client' || item === 'network' || item === 'mask' || item === 'exit' || item === '#' || item === '!' || item === '*' || item === 'username' || item === 'privilege' || item === 'password' || item === 'secret' || item === 'algorithm-type' || item === 'md5' || item === 'scrypt' || item === 'sha256' || item === 'banner' || item === 'config-save' || item === 'exec' || item === 'incoming' || item === 'login' || item === 'motd' || item === 'prompt-timeout' || item === 'slip-ppp' || item === 'ip' || item === 'domain-name' || item === 'ssh' || item === 'version' || item === 'hostname' || item === 'crypto' || item === 'key' || item === 'generate' || item === 'rsa' || item === 'usage-keys' || item === 'modulus' || item === 'no' || item === 'domain-lookup' || item === 'router' || item === 'line' || item === 'console' || item === 'vty' || item === 'interface' || item === 'vlan' || item === 'ping' || item === 'show' || item === 'run' || item === 'configure' || item === 'terminal' || item === 'memory' || item === 'speed' || item === 'carrier-delay' || item === 'duplex' || item === 'auto' || item === 'full' || item === 'half' || item === 'address' || item === 'secondary' || item === 'ospf' || item === 'cost' || item === 'priority' || item === 'shutdown' || item === 'description' || item === 'helper-address' || item === 'local' || item === 'logging' || item === 'synchronous' || item === 'exec-timeout' || item === 'area' || item === 'passive-interface' || item === 'default-information' || item === 'originate' || item === 'redistribute' || item === 'static' || item === 'rip' || item === 'auto-summary' || item === 'transport' || item === 'input' || item === 'telnet';
 }
 export const Line_console_cmds = 'Line_console_cmds';
 export function isLine_console_cmds(item) {
@@ -313,9 +310,9 @@ export const Hostname_cmd = 'Hostname_cmd';
 export function isHostname_cmd(item) {
     return reflection.isInstance(item, Hostname_cmd);
 }
-export const Hostname_Input = 'Hostname_Input';
-export function isHostname_Input(item) {
-    return reflection.isInstance(item, Hostname_Input);
+export const HOSTNAME_INPUT = 'HOSTNAME_INPUT';
+export function isHOSTNAME_INPUT(item) {
+    return reflection.isInstance(item, HOSTNAME_INPUT);
 }
 export const Interface_cmd = 'Interface_cmd';
 export function isInterface_cmd(item) {
@@ -364,6 +361,10 @@ export function isIp_Helper_cmd(item) {
 export const Key_cmd = 'Key_cmd';
 export function isKey_cmd(item) {
     return reflection.isInstance(item, Key_cmd);
+}
+export const KEYWORDS = 'KEYWORDS';
+export function isKEYWORDS(item) {
+    return reflection.isInstance(item, KEYWORDS);
 }
 export const Line_cmd = 'Line_cmd';
 export function isLine_cmd(item) {
@@ -667,7 +668,7 @@ export function isOspf_passive_Sub_Interface_number(item) {
 }
 export class CiscoIosAstReflection extends langium.AbstractAstReflection {
     getAllTypes() {
-        return [AlgorithmTypeOption, AlgorithmType_Options, BANNER_MESSAGE, Banner_cmd, Banner_cmd_option, Bgp_cmd, Bgp_cmds, Bgp_neigbour_ebgp_multihop_option, Bgp_neighbor_cmd, Bgp_neighbour_Remote_as_option, Bgp_neighbour_options, Bgp_neighbour_update_source_option, Bgp_network_cmd, Bgp_router_id_cmd, Bgp_update_source_Sub_Interface_number, Bgp_update_source_interface_number, Bgp_update_source_interface_type_fastethernet, Bgp_update_source_interface_type_gigabitethernet, Bgp_update_source_interface_types, COMMENT, COMMENTLINE, COMMON, CarrierDelay_cmd, Configure_cmd, Configure_cmd_options, Configure_cmds, Crypto_cmd, Crypto_cmd_option, DOMAINNAME_INPUT, Description_cmd, Domainname_cmd, Duplex_cmd, Duplex_option, Enable_cmds, ExecTimeout_cmd, Exit, Generate_cmd, Generate_cmd_option, Hostname_Input, Hostname_cmd, IP, IP_cmd, IP_cmd_interface, IP_cmd_option, Interface_cmd, Interface_fastethernet_cmds, Interface_gigabitethernet_cmds, Interface_number, Interface_type_fastethernet, Interface_type_gigabitethernet, Interface_type_vlan, Interface_types, Interface_vlan_cmds, Ip_Helper_cmd, Ip_cmd_option_address, Ip_cmd_option_ospf, Ip_cmd_options, Key_cmd, Key_cmd_option, Line_ExecTimeoutValue, Line_LoggingOption, Line_LoginOption, Line_cmd, Line_console_cmds, Line_type_console, Line_type_vty, Line_types, Line_vty_cmds, Logging_cmd, Login_cmd, MD5Option, MD5Option_cmd, MODULUS_INPUT, Modulus_cmd, No_banner_cmd, No_cmd, No_cmd_interface, No_cmd_interface_option, No_ip_cmd, No_ip_cmd_option_domain_lookup, No_ip_cmd_options, No_options, OSPF_PROCESS_NUMBER, Ospf_cmd, Ospf_cmds, Ospf_default_information_cmd, Ospf_default_information_cmd_options, Ospf_interface_types, Ospf_network_cmd, Ospf_passive_Sub_Interface_number, Ospf_passive_interface_cmd, Ospf_passive_interface_number, Ospf_passive_interface_type_fastethernet, Ospf_passive_interface_type_gigabitethernet, Ospf_priority_cmd, Ospf_redistribute_cmd, Ospf_redistribute_cmd_options, Ospf_router_id_cmd, PasswordOption, Ping_cmd, PrivilegeOption, Rip_cmd, Rip_cmds, Rip_default_information_cmd, Rip_default_information_cmd_options, Rip_interface_types, Rip_network_cmd, Rip_no_cmd_options, Rip_no_cmds, Rip_passive_Sub_Interface_number, Rip_passive_interface_cmd, Rip_passive_interface_number, Rip_passive_interface_type_fastethernet, Rip_passive_interface_type_gigabitethernet, Rip_redistribute_cmd, Rip_redistribute_cmd_options, Rip_version_cmd, Router_cmd, Router_cmd_option, Rsa_cmd, Rsa_cmd_option, SSHOptions, SSH_cmd, SUBNETMASK, Script, ScryptOption, ScryptOption_cmd, SecretOption, Sha256Option, Sha256Option_cmd, Show_cmd, Show_cmd_options, Shutdown_cmd, Speed_cmd, Speed_cmd_fe, Stat, Sub_Interface_number, TransportInputList, TransportInput_cmd, TransportProto, Transport_cmd, Transport_cmd_option, USERNAME_INPUT, USERNAME_PASSWORD_INPUT, UsageKeys_Option, UsageKeys_cmd, Username_cmd, Username_cmd_option, VERSION_INPUT, WILDCARDMASK];
+        return [AlgorithmTypeOption, AlgorithmType_Options, BANNER_MESSAGE, Banner_cmd, Banner_cmd_option, Bgp_cmd, Bgp_cmds, Bgp_neigbour_ebgp_multihop_option, Bgp_neighbor_cmd, Bgp_neighbour_Remote_as_option, Bgp_neighbour_options, Bgp_neighbour_update_source_option, Bgp_network_cmd, Bgp_router_id_cmd, Bgp_update_source_Sub_Interface_number, Bgp_update_source_interface_number, Bgp_update_source_interface_type_fastethernet, Bgp_update_source_interface_type_gigabitethernet, Bgp_update_source_interface_types, COMMENT, COMMENTLINE, COMMON, CarrierDelay_cmd, Configure_cmd, Configure_cmd_options, Configure_cmds, Crypto_cmd, Crypto_cmd_option, DOMAINNAME_INPUT, Description_cmd, Domainname_cmd, Duplex_cmd, Duplex_option, Enable_cmds, ExecTimeout_cmd, Exit, Generate_cmd, Generate_cmd_option, HOSTNAME_INPUT, Hostname_cmd, IP, IP_cmd, IP_cmd_interface, IP_cmd_option, Interface_cmd, Interface_fastethernet_cmds, Interface_gigabitethernet_cmds, Interface_number, Interface_type_fastethernet, Interface_type_gigabitethernet, Interface_type_vlan, Interface_types, Interface_vlan_cmds, Ip_Helper_cmd, Ip_cmd_option_address, Ip_cmd_option_ospf, Ip_cmd_options, KEYWORDS, Key_cmd, Key_cmd_option, Line_ExecTimeoutValue, Line_LoggingOption, Line_LoginOption, Line_cmd, Line_console_cmds, Line_type_console, Line_type_vty, Line_types, Line_vty_cmds, Logging_cmd, Login_cmd, MD5Option, MD5Option_cmd, MODULUS_INPUT, Modulus_cmd, No_banner_cmd, No_cmd, No_cmd_interface, No_cmd_interface_option, No_ip_cmd, No_ip_cmd_option_domain_lookup, No_ip_cmd_options, No_options, OSPF_PROCESS_NUMBER, Ospf_cmd, Ospf_cmds, Ospf_default_information_cmd, Ospf_default_information_cmd_options, Ospf_interface_types, Ospf_network_cmd, Ospf_passive_Sub_Interface_number, Ospf_passive_interface_cmd, Ospf_passive_interface_number, Ospf_passive_interface_type_fastethernet, Ospf_passive_interface_type_gigabitethernet, Ospf_priority_cmd, Ospf_redistribute_cmd, Ospf_redistribute_cmd_options, Ospf_router_id_cmd, PasswordOption, Ping_cmd, PrivilegeOption, Rip_cmd, Rip_cmds, Rip_default_information_cmd, Rip_default_information_cmd_options, Rip_interface_types, Rip_network_cmd, Rip_no_cmd_options, Rip_no_cmds, Rip_passive_Sub_Interface_number, Rip_passive_interface_cmd, Rip_passive_interface_number, Rip_passive_interface_type_fastethernet, Rip_passive_interface_type_gigabitethernet, Rip_redistribute_cmd, Rip_redistribute_cmd_options, Rip_version_cmd, Router_cmd, Router_cmd_option, Rsa_cmd, Rsa_cmd_option, SSHOptions, SSH_cmd, SUBNETMASK, Script, ScryptOption, ScryptOption_cmd, SecretOption, Sha256Option, Sha256Option_cmd, Show_cmd, Show_cmd_options, Shutdown_cmd, Speed_cmd, Speed_cmd_fe, Stat, Sub_Interface_number, TransportInputList, TransportInput_cmd, TransportProto, Transport_cmd, Transport_cmd_option, USERNAME_INPUT, USERNAME_PASSWORD_INPUT, UsageKeys_Option, UsageKeys_cmd, Username_cmd, Username_cmd_option, VERSION_INPUT, WILDCARDMASK];
     }
     computeIsSubtype(subtype, supertype) {
         switch (subtype) {
@@ -854,9 +855,6 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
     getReferenceType(refInfo) {
         const referenceId = `${refInfo.container.$type}:${refInfo.property}`;
         switch (referenceId) {
-            case 'Ping_cmd:hostname': {
-                return Hostname_Input;
-            }
             default: {
                 throw new Error(`${referenceId} is not a valid reference id.`);
             }
@@ -1096,11 +1094,11 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     ]
                 };
             }
-            case Hostname_Input: {
+            case HOSTNAME_INPUT: {
                 return {
-                    name: Hostname_Input,
+                    name: HOSTNAME_INPUT,
                     properties: [
-                        { name: 'name' }
+                        { name: 'value' }
                     ]
                 };
             }
@@ -1210,6 +1208,14 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Key_cmd,
                     properties: [
                         { name: 'option' }
+                    ]
+                };
+            }
+            case KEYWORDS: {
+                return {
+                    name: KEYWORDS,
+                    properties: [
+                        { name: 'keywords' }
                     ]
                 };
             }
@@ -1326,7 +1332,6 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: No_cmd_interface,
                     properties: [
-                        { name: 'comment' },
                         { name: 'option' }
                     ]
                 };
@@ -1485,7 +1490,6 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Ping_cmd,
                     properties: [
                         { name: 'comment' },
-                        { name: 'hostname' },
                         { name: 'ip' }
                     ]
                 };

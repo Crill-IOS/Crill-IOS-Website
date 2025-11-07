@@ -55,27 +55,24 @@ export class CiscoIosCompletionProvider extends DefaultCompletionProvider {
      * @returns nothing (could return a maybepromise)
      */
     completionFor(context, next, acceptor) {
-        // for debugging
-        //console.log(next.type);
+        console.log(next);
         let detail;
-        if (next.type) {
-            detail = details[next.type];
-            //if details exist for "next.type" create 
-            // a completion item with the details
-            if (detail) {
-                acceptor(context, {
-                    label: detail.label,
-                    detail: detail.description,
-                    sortText: "1",
-                    kind: 1,
-                    insertTextFormat: 2,
-                    insertText: detail.insert
-                });
-                //if no details were found use fallback instead
-            }
-            else if (ast.isKeyword(next.feature)) {
-                return this.completionForKeyword(context, next.feature, acceptor);
-            }
+        detail = details[next.type];
+        //if details exist for "next.type" create 
+        // a completion item with the details
+        if (detail) {
+            acceptor(context, {
+                label: detail.label,
+                detail: detail.description,
+                sortText: "1",
+                kind: 1,
+                insertTextFormat: 2,
+                insertText: detail.insert
+            });
+            //if no details were found use fallback instead
+        }
+        else if (ast.isKeyword(next.feature) && next.type != "KEYWORDS") {
+            return this.completionForKeyword(context, next.feature, acceptor);
         }
     }
     /**
