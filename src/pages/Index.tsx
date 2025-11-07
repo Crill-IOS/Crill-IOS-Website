@@ -104,9 +104,9 @@ const Index = () => {
               </Button>
               
               <Button asChild size="lg" variant="outline" className="text-lg px-8">
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-5 w-5" />
-                  VS Code Marketplace
+                  VS Code Marketplace (coming soon)
                 </a>
               </Button>
             </div>

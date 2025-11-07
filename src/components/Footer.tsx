@@ -38,7 +38,7 @@ const Footer = () => {
                 className="flex items-center space-x-2 text-muted-foreground hover:text-coral transition-colors text-sm"
               >
                 <ExternalLink className="h-4 w-4" />
-                <span>VS Code Marketplace</span>
+                <span>VS Code Marketplace (coming soon)</span>
               </a>
 
               <a
