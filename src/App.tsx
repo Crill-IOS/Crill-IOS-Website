@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Playground from "./pages/Playground";
+import Impressum from "./pages/Impressum";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const App = () => (
                   <Route path="/" element={<Index />} />
                   <Route path="*" element={<NotFound />} />
                   <Route path="/playground" element={<Playground />} />
+                  <Route path="/impressum" element={<Impressum />} />
                 </Routes>
               </main>
               <Footer />

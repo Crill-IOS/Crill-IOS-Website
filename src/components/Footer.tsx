@@ -1,4 +1,4 @@
-import { Github, ExternalLink, Mail, BookText } from "lucide-react";
+import { Github, ExternalLink, Mail, BookText, Book } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -54,20 +54,27 @@ const Footer = () => {
           {/* Kontakt */}
           <div className="space-y-4">
             <h3 className="font-semibold text-foreground">Kontakt</h3>
-            {/* <div className="flex items-center space-x-2">
-              <img src="/logo_small_simple.png" alt="Crill-IOS Logo" className="h-8 w-8" />
-              <span className="text-muted-foreground text-sm">Crill-IOS Team</span>
-            </div> */}
-            <p className="text-muted-foreground text-sm">
-              So erreichst du uns:
-              <a 
-              href="mailto:crillios-htl3r@gmail.com"
-              className="text-coral hover:underline text-sm flex items-center space-x-2 text-muted-foreground hover:text-coral transition-colors text-sm mt-2"
-            >
-              <Mail className="h-4 w-4"></Mail>
-              <span>crillios-htl3r@gmail.com</span>
-            </a>
-            </p>
+            <div className="space-y-2">
+              <p className="text-muted-foreground text-sm">
+                So erreichst du uns:
+                <a 
+                href="mailto:team@crillios.com"
+                className="text-coral hover:underline text-sm flex items-center space-x-2 text-muted-foreground hover:text-coral transition-colors text-sm mt-2"
+              >
+                <Mail className="h-4 w-4"></Mail>
+                <span>team@crillios.com</span>
+              </a>
+              
+              </p>
+            
+              <a
+                  href="/impressum"
+                  className="flex items-center space-x-2 text-muted-foreground hover:text-coral transition-colors text-sm"
+                >
+                  <Book className="h-4 w-4" />
+                <span>Impressum</span>
+              </a>
+            </div>
             
             
           </div>
