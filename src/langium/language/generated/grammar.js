@@ -272,7 +272,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
                 "terminal": {
                   "$type": "RuleCall",
                   "rule": {
-                    "$ref": "#/rules@33"
+                    "$ref": "#/rules@34"
                   },
                   "arguments": []
                 },
@@ -315,7 +315,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
         "terminal": {
           "$type": "RuleCall",
           "rule": {
-            "$ref": "#/rules@28"
+            "$ref": "#/rules@29"
           },
           "arguments": []
         }
@@ -337,7 +337,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
         "terminal": {
           "$type": "RuleCall",
           "rule": {
-            "$ref": "#/rules@28"
+            "$ref": "#/rules@29"
           },
           "arguments": []
         }
@@ -359,7 +359,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
         "terminal": {
           "$type": "RuleCall",
           "rule": {
-            "$ref": "#/rules@28"
+            "$ref": "#/rules@29"
           },
           "arguments": []
         }
@@ -457,7 +457,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@27"
+              "$ref": "#/rules@28"
             },
             "arguments": []
           },
@@ -546,7 +546,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@27"
+              "$ref": "#/rules@28"
             },
             "arguments": []
           }
@@ -565,7 +565,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
       "definition": {
         "$type": "RuleCall",
         "rule": {
-          "$ref": "#/rules@29"
+          "$ref": "#/rules@30"
         },
         "arguments": []
       },
@@ -589,14 +589,14 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@29"
+                "$ref": "#/rules@30"
               },
               "arguments": []
             },
             {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@31"
+                "$ref": "#/rules@32"
               },
               "arguments": []
             }
@@ -623,14 +623,14 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@29"
+                "$ref": "#/rules@30"
               },
               "arguments": []
             },
             {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@31"
+                "$ref": "#/rules@32"
               },
               "arguments": []
             }
@@ -657,18 +657,40 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@29"
+                "$ref": "#/rules@30"
               },
               "arguments": []
             },
             {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@31"
+                "$ref": "#/rules@32"
               },
               "arguments": []
             }
           ]
+        }
+      },
+      "definesHiddenTokens": false,
+      "entry": false,
+      "fragment": false,
+      "hiddenTokens": [],
+      "parameters": [],
+      "wildcard": false
+    },
+    {
+      "$type": "ParserRule",
+      "name": "PRIVILEGE_INPUT",
+      "definition": {
+        "$type": "Assignment",
+        "feature": "value",
+        "operator": "=",
+        "terminal": {
+          "$type": "RuleCall",
+          "rule": {
+            "$ref": "#/rules@31"
+          },
+          "arguments": []
         }
       },
       "definesHiddenTokens": false,
@@ -688,7 +710,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
         "terminal": {
           "$type": "RuleCall",
           "rule": {
-            "$ref": "#/rules@30"
+            "$ref": "#/rules@31"
           },
           "arguments": []
         }
@@ -710,7 +732,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
         "terminal": {
           "$type": "RuleCall",
           "rule": {
-            "$ref": "#/rules@30"
+            "$ref": "#/rules@31"
           },
           "arguments": []
         }
@@ -735,14 +757,14 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@29"
+                "$ref": "#/rules@30"
               },
               "arguments": []
             },
             {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@31"
+                "$ref": "#/rules@32"
               },
               "arguments": []
             }
@@ -770,14 +792,14 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@29"
+                "$ref": "#/rules@30"
               },
               "arguments": []
             },
             {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@31"
+                "$ref": "#/rules@32"
               },
               "arguments": []
             }
@@ -801,7 +823,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
         "terminal": {
           "$type": "RuleCall",
           "rule": {
-            "$ref": "#/rules@30"
+            "$ref": "#/rules@31"
           },
           "arguments": []
         }
@@ -873,7 +895,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "TerminalRuleCall",
             "rule": {
-              "$ref": "#/rules@30"
+              "$ref": "#/rules@31"
             }
           },
           {
@@ -886,7 +908,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "TerminalRuleCall",
             "rule": {
-              "$ref": "#/rules@30"
+              "$ref": "#/rules@31"
             }
           },
           {
@@ -899,7 +921,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "TerminalRuleCall",
             "rule": {
-              "$ref": "#/rules@30"
+              "$ref": "#/rules@31"
             }
           },
           {
@@ -912,7 +934,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "TerminalRuleCall",
             "rule": {
-              "$ref": "#/rules@30"
+              "$ref": "#/rules@31"
             }
           }
         ]
@@ -925,7 +947,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
       "name": "INPUT_lexer",
       "definition": {
         "$type": "RegexToken",
-        "regex": "/[A-Za-z0-9\\\\-_.]*[A-Za-z][A-Za-z0-9\\\\-_.]*/"
+        "regex": "/[A-Za-z0-9\\\\-_.,]*[A-Za-z][A-Za-z0-9\\\\-_.,]*/"
       },
       "fragment": false,
       "hidden": false
@@ -1367,41 +1389,6 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@61"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@86"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@34"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@47"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@56"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
               "$ref": "#/rules@62"
             },
             "arguments": []
@@ -1409,28 +1396,63 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@82"
+              "$ref": "#/rules@87"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@80"
+              "$ref": "#/rules@35"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@32"
+              "$ref": "#/rules@48"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@73"
+              "$ref": "#/rules@57"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@63"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@83"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@81"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@33"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@74"
             },
             "arguments": []
           }
@@ -1472,7 +1494,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@35"
+                "$ref": "#/rules@36"
               },
               "arguments": []
             },
@@ -1503,13 +1525,6 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@36"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
               "$ref": "#/rules@37"
             },
             "arguments": []
@@ -1525,6 +1540,13 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "$type": "RuleCall",
             "rule": {
               "$ref": "#/rules@39"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@40"
             },
             "arguments": []
           }
@@ -1554,7 +1576,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@20"
               },
               "arguments": []
             }
@@ -1647,7 +1669,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@40"
+                "$ref": "#/rules@41"
               },
               "arguments": []
             }
@@ -1670,21 +1692,21 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@41"
+              "$ref": "#/rules@42"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@43"
+              "$ref": "#/rules@44"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@45"
+              "$ref": "#/rules@46"
             },
             "arguments": []
           }
@@ -1714,7 +1736,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@42"
+                "$ref": "#/rules@43"
               },
               "arguments": []
             }
@@ -1776,7 +1798,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@44"
+                "$ref": "#/rules@45"
               },
               "arguments": []
             }
@@ -1838,7 +1860,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@46"
+                "$ref": "#/rules@47"
               },
               "arguments": []
             }
@@ -1900,7 +1922,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@48"
+                "$ref": "#/rules@49"
               },
               "arguments": []
             }
@@ -1912,7 +1934,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@22"
+                "$ref": "#/rules@23"
               },
               "arguments": []
             }
@@ -1943,13 +1965,6 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
         "terminal": {
           "$type": "Alternatives",
           "elements": [
-            {
-              "$type": "RuleCall",
-              "rule": {
-                "$ref": "#/rules@49"
-              },
-              "arguments": []
-            },
             {
               "$type": "RuleCall",
               "rule": {
@@ -1989,6 +2004,13 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
               "$type": "RuleCall",
               "rule": {
                 "$ref": "#/rules@55"
+              },
+              "arguments": []
+            },
+            {
+              "$type": "RuleCall",
+              "rule": {
+                "$ref": "#/rules@56"
               },
               "arguments": []
             }
@@ -2124,7 +2146,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@57"
+                "$ref": "#/rules@58"
               },
               "arguments": []
             }
@@ -2147,14 +2169,14 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@58"
+              "$ref": "#/rules@59"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@59"
+              "$ref": "#/rules@60"
             },
             "arguments": []
           }
@@ -2184,7 +2206,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@23"
+                "$ref": "#/rules@24"
               },
               "arguments": []
             }
@@ -2222,7 +2244,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@60"
+                "$ref": "#/rules@61"
               },
               "arguments": []
             }
@@ -2253,7 +2275,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@21"
+                "$ref": "#/rules@22"
               },
               "arguments": []
             }
@@ -2329,7 +2351,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@63"
+                "$ref": "#/rules@64"
               },
               "arguments": []
             }
@@ -2356,7 +2378,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
       "definition": {
         "$type": "RuleCall",
         "rule": {
-          "$ref": "#/rules@64"
+          "$ref": "#/rules@65"
         },
         "arguments": []
       },
@@ -2384,7 +2406,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@65"
+                "$ref": "#/rules@66"
               },
               "arguments": []
             }
@@ -2404,7 +2426,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
       "definition": {
         "$type": "RuleCall",
         "rule": {
-          "$ref": "#/rules@66"
+          "$ref": "#/rules@67"
         },
         "arguments": []
       },
@@ -2432,7 +2454,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@67"
+                "$ref": "#/rules@68"
               },
               "arguments": []
             }
@@ -2452,7 +2474,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
       "definition": {
         "$type": "RuleCall",
         "rule": {
-          "$ref": "#/rules@68"
+          "$ref": "#/rules@69"
         },
         "arguments": []
       },
@@ -2480,7 +2502,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@69"
+                "$ref": "#/rules@70"
               },
               "arguments": []
             }
@@ -2500,7 +2522,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
       "definition": {
         "$type": "RuleCall",
         "rule": {
-          "$ref": "#/rules@70"
+          "$ref": "#/rules@71"
         },
         "arguments": []
       },
@@ -2528,7 +2550,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@71"
+                "$ref": "#/rules@72"
               },
               "arguments": []
             }
@@ -2548,7 +2570,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
       "definition": {
         "$type": "RuleCall",
         "rule": {
-          "$ref": "#/rules@72"
+          "$ref": "#/rules@73"
         },
         "arguments": []
       },
@@ -2576,7 +2598,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@20"
+                "$ref": "#/rules@21"
               },
               "arguments": []
             }
@@ -2607,7 +2629,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@74"
+                "$ref": "#/rules@75"
               },
               "arguments": []
             }
@@ -2637,14 +2659,14 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@75"
+              "$ref": "#/rules@76"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@77"
+              "$ref": "#/rules@78"
             },
             "arguments": []
           }
@@ -2674,7 +2696,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@76"
+                "$ref": "#/rules@77"
               },
               "arguments": []
             }
@@ -2749,7 +2771,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@78"
+                "$ref": "#/rules@79"
               },
               "arguments": []
             }
@@ -2769,7 +2791,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
       "definition": {
         "$type": "RuleCall",
         "rule": {
-          "$ref": "#/rules@79"
+          "$ref": "#/rules@80"
         },
         "arguments": []
       },
@@ -2816,7 +2838,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@81"
+                "$ref": "#/rules@82"
               },
               "arguments": []
             }
@@ -2839,21 +2861,21 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@130"
+              "$ref": "#/rules@131"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@146"
+              "$ref": "#/rules@147"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@163"
+              "$ref": "#/rules@164"
             },
             "arguments": []
           }
@@ -2888,7 +2910,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@83"
+                "$ref": "#/rules@84"
               },
               "arguments": []
             }
@@ -2911,14 +2933,14 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@84"
+              "$ref": "#/rules@85"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@85"
+              "$ref": "#/rules@86"
             },
             "arguments": []
           }
@@ -2953,7 +2975,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -2972,7 +2994,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@109"
+                "$ref": "#/rules@110"
               },
               "arguments": []
             },
@@ -3009,7 +3031,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -3021,7 +3043,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -3040,7 +3062,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@110"
+                "$ref": "#/rules@111"
               },
               "arguments": []
             },
@@ -3072,7 +3094,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@87"
+                "$ref": "#/rules@88"
               },
               "arguments": []
             }
@@ -3095,13 +3117,6 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@88"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
               "$ref": "#/rules@89"
             },
             "arguments": []
@@ -3110,6 +3125,13 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "$type": "RuleCall",
             "rule": {
               "$ref": "#/rules@90"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@91"
             },
             "arguments": []
           }
@@ -3144,7 +3166,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@91"
+                "$ref": "#/rules@92"
               },
               "arguments": []
             }
@@ -3163,7 +3185,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@121"
+                "$ref": "#/rules@122"
               },
               "arguments": []
             },
@@ -3200,7 +3222,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@91"
+                "$ref": "#/rules@92"
               },
               "arguments": []
             }
@@ -3219,7 +3241,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@118"
+                "$ref": "#/rules@119"
               },
               "arguments": []
             },
@@ -3256,7 +3278,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -3275,7 +3297,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@128"
+                "$ref": "#/rules@129"
               },
               "arguments": []
             },
@@ -3303,7 +3325,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -3315,14 +3337,14 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@30"
+              "$ref": "#/rules@31"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@92"
+              "$ref": "#/rules@93"
             },
             "arguments": [],
             "cardinality": "?"
@@ -3354,7 +3376,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@30"
+              "$ref": "#/rules@31"
             },
             "arguments": []
           }
@@ -3391,7 +3413,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@33"
+                "$ref": "#/rules@34"
               },
               "arguments": []
             },
@@ -3423,7 +3445,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@95"
+                "$ref": "#/rules@96"
               },
               "arguments": []
             }
@@ -3446,14 +3468,14 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@96"
+              "$ref": "#/rules@97"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@97"
+              "$ref": "#/rules@98"
             },
             "arguments": []
           }
@@ -3608,7 +3630,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@100"
+                "$ref": "#/rules@101"
               },
               "arguments": []
             }
@@ -3710,7 +3732,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@33"
+                "$ref": "#/rules@34"
               },
               "arguments": []
             },
@@ -3738,7 +3760,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@104"
+              "$ref": "#/rules@105"
             },
             "arguments": []
           }
@@ -3795,7 +3817,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@106"
+              "$ref": "#/rules@107"
             },
             "arguments": []
           }
@@ -3852,7 +3874,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@108"
+              "$ref": "#/rules@109"
             },
             "arguments": []
           }
@@ -3878,7 +3900,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -3890,7 +3912,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -3927,28 +3949,28 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
+              "$ref": "#/rules@104"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@106"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@108"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
               "$ref": "#/rules@103"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@105"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@107"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@102"
             },
             "arguments": []
           }
@@ -3977,35 +3999,35 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
+              "$ref": "#/rules@104"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@106"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@108"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@112"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
               "$ref": "#/rules@103"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@105"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@107"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@111"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@102"
             },
             "arguments": []
           }
@@ -4031,7 +4053,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@112"
+              "$ref": "#/rules@113"
             },
             "arguments": []
           }
@@ -4054,7 +4076,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
         "terminal": {
           "$type": "RuleCall",
           "rule": {
-            "$ref": "#/rules@113"
+            "$ref": "#/rules@114"
           },
           "arguments": []
         }
@@ -4079,7 +4101,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@114"
+              "$ref": "#/rules@115"
             },
             "arguments": []
           }
@@ -4105,7 +4127,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@115"
+                "$ref": "#/rules@116"
               },
               "arguments": []
             },
@@ -4140,7 +4162,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@116"
+                "$ref": "#/rules@117"
               },
               "arguments": []
             }
@@ -4152,7 +4174,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@117"
+                "$ref": "#/rules@118"
               },
               "arguments": []
             }
@@ -4212,14 +4234,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@94"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@98"
+              "$ref": "#/rules@95"
             },
             "arguments": []
           },
@@ -4233,14 +4248,14 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@101"
+              "$ref": "#/rules@100"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@119"
+              "$ref": "#/rules@102"
             },
             "arguments": []
           },
@@ -4254,7 +4269,14 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@93"
+              "$ref": "#/rules@121"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@94"
             },
             "arguments": []
           }
@@ -4284,7 +4306,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -4322,7 +4344,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -4359,14 +4381,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@94"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@98"
+              "$ref": "#/rules@95"
             },
             "arguments": []
           },
@@ -4380,28 +4395,35 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@101"
+              "$ref": "#/rules@100"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@122"
+              "$ref": "#/rules@102"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@127"
+              "$ref": "#/rules@123"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@93"
+              "$ref": "#/rules@128"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@94"
             },
             "arguments": []
           }
@@ -4431,7 +4453,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@123"
+                "$ref": "#/rules@124"
               },
               "arguments": []
             }
@@ -4465,18 +4487,6 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@124"
-              },
-              "arguments": []
-            }
-          },
-          {
-            "$type": "Assignment",
-            "feature": "option",
-            "operator": "=",
-            "terminal": {
-              "$type": "RuleCall",
-              "rule": {
                 "$ref": "#/rules@125"
               },
               "arguments": []
@@ -4490,6 +4500,18 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
               "$type": "RuleCall",
               "rule": {
                 "$ref": "#/rules@126"
+              },
+              "arguments": []
+            }
+          },
+          {
+            "$type": "Assignment",
+            "feature": "option",
+            "operator": "=",
+            "terminal": {
+              "$type": "RuleCall",
+              "rule": {
+                "$ref": "#/rules@127"
               },
               "arguments": []
             }
@@ -4565,7 +4587,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -4602,28 +4624,28 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
+              "$ref": "#/rules@95"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@102"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@130"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
               "$ref": "#/rules@94"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@101"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@129"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@93"
             },
             "arguments": []
           }
@@ -4695,7 +4717,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -4714,7 +4736,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@132"
+                "$ref": "#/rules@133"
               },
               "arguments": []
             },
@@ -4753,7 +4775,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@33"
+                "$ref": "#/rules@34"
               },
               "arguments": []
             },
@@ -4784,13 +4806,6 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@133"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
               "$ref": "#/rules@134"
             },
             "arguments": []
@@ -4805,28 +4820,35 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@145"
+              "$ref": "#/rules@136"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@141"
+              "$ref": "#/rules@146"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@143"
+              "$ref": "#/rules@142"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@131"
+              "$ref": "#/rules@144"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@132"
             },
             "arguments": []
           }
@@ -4922,7 +4944,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -4960,7 +4982,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@136"
+                "$ref": "#/rules@137"
               },
               "arguments": []
             }
@@ -4983,14 +5005,14 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@137"
+              "$ref": "#/rules@138"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@138"
+              "$ref": "#/rules@139"
             },
             "arguments": []
           }
@@ -5025,7 +5047,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@139"
+                "$ref": "#/rules@140"
               },
               "arguments": []
             }
@@ -5068,7 +5090,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@139"
+                "$ref": "#/rules@140"
               },
               "arguments": []
             }
@@ -5102,7 +5124,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -5114,14 +5136,14 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@30"
+              "$ref": "#/rules@31"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@140"
+              "$ref": "#/rules@141"
             },
             "arguments": [],
             "cardinality": "?"
@@ -5153,7 +5175,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@30"
+              "$ref": "#/rules@31"
             },
             "arguments": []
           }
@@ -5183,7 +5205,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@142"
+                "$ref": "#/rules@143"
               },
               "arguments": []
             }
@@ -5240,7 +5262,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@144"
+                "$ref": "#/rules@145"
               },
               "arguments": []
             }
@@ -5297,7 +5319,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -5342,7 +5364,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@148"
+                "$ref": "#/rules@149"
               },
               "arguments": []
             },
@@ -5381,7 +5403,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@33"
+                "$ref": "#/rules@34"
               },
               "arguments": []
             },
@@ -5412,14 +5434,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@149"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
-              "$ref": "#/rules@151"
+              "$ref": "#/rules@150"
             },
             "arguments": []
           },
@@ -5440,21 +5455,28 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@159"
+              "$ref": "#/rules@154"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@161"
+              "$ref": "#/rules@160"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@147"
+              "$ref": "#/rules@162"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@148"
             },
             "arguments": []
           }
@@ -5484,7 +5506,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@150"
+                "$ref": "#/rules@151"
               },
               "arguments": []
             }
@@ -5579,7 +5601,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -5610,7 +5632,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@154"
+                "$ref": "#/rules@155"
               },
               "arguments": []
             }
@@ -5633,14 +5655,14 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@155"
+              "$ref": "#/rules@156"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@156"
+              "$ref": "#/rules@157"
             },
             "arguments": []
           }
@@ -5675,7 +5697,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@157"
+                "$ref": "#/rules@158"
               },
               "arguments": []
             }
@@ -5718,7 +5740,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@157"
+                "$ref": "#/rules@158"
               },
               "arguments": []
             }
@@ -5752,7 +5774,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -5764,14 +5786,14 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@30"
+              "$ref": "#/rules@31"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@92"
+              "$ref": "#/rules@93"
             },
             "arguments": [],
             "cardinality": "?"
@@ -5803,7 +5825,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@30"
+              "$ref": "#/rules@31"
             },
             "arguments": []
           }
@@ -5833,7 +5855,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@160"
+                "$ref": "#/rules@161"
               },
               "arguments": []
             }
@@ -5890,7 +5912,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@162"
+                "$ref": "#/rules@163"
               },
               "arguments": []
             }
@@ -5947,7 +5969,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -5966,7 +5988,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@165"
+                "$ref": "#/rules@166"
               },
               "arguments": []
             },
@@ -6005,7 +6027,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@33"
+                "$ref": "#/rules@34"
               },
               "arguments": []
             },
@@ -6036,13 +6058,6 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@166"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
               "$ref": "#/rules@167"
             },
             "arguments": []
@@ -6050,14 +6065,21 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@179"
+              "$ref": "#/rules@168"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@164"
+              "$ref": "#/rules@180"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@165"
             },
             "arguments": []
           }
@@ -6141,7 +6163,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@168"
+                "$ref": "#/rules@169"
               },
               "arguments": []
             }
@@ -6171,13 +6193,6 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@169"
-            },
-            "arguments": []
-          },
-          {
-            "$type": "RuleCall",
-            "rule": {
               "$ref": "#/rules@170"
             },
             "arguments": []
@@ -6185,7 +6200,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@176"
+              "$ref": "#/rules@171"
             },
             "arguments": []
           },
@@ -6200,6 +6215,13 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "$type": "RuleCall",
             "rule": {
               "$ref": "#/rules@178"
+            },
+            "arguments": []
+          },
+          {
+            "$type": "RuleCall",
+            "rule": {
+              "$ref": "#/rules@179"
             },
             "arguments": []
           }
@@ -6229,7 +6251,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -6256,7 +6278,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@171"
+              "$ref": "#/rules@172"
             },
             "arguments": []
           }
@@ -6278,14 +6300,14 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@172"
+              "$ref": "#/rules@173"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@173"
+              "$ref": "#/rules@174"
             },
             "arguments": []
           }
@@ -6320,7 +6342,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@174"
+                "$ref": "#/rules@175"
               },
               "arguments": []
             }
@@ -6363,7 +6385,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@174"
+                "$ref": "#/rules@175"
               },
               "arguments": []
             }
@@ -6397,7 +6419,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }
@@ -6409,14 +6431,14 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@30"
+              "$ref": "#/rules@31"
             },
             "arguments": []
           },
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@175"
+              "$ref": "#/rules@176"
             },
             "arguments": [],
             "cardinality": "?"
@@ -6448,7 +6470,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
           {
             "$type": "RuleCall",
             "rule": {
-              "$ref": "#/rules@30"
+              "$ref": "#/rules@31"
             },
             "arguments": []
           }
@@ -6478,7 +6500,7 @@ export const CiscoIOSGrammar = () => loadedCiscoIOSGrammar !== null && loadedCis
             "terminal": {
               "$type": "RuleCall",
               "rule": {
-                "$ref": "#/rules@30"
+                "$ref": "#/rules@31"
               },
               "arguments": []
             }

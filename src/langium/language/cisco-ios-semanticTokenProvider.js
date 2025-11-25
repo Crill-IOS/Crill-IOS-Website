@@ -15,6 +15,7 @@ const TOKEN_MAP = {
     Interface_number: { type: 'string' },
     VERSION_INPUT: { type: 'string' },
     MODULUS_INPUT: { type: 'string' },
+    PRIVILEGE_INPUT: { type: 'string' },
     USERNAME_PASSWORD_INPUT: { type: 'string' },
     IP: { type: 'string' },
     SUBNETMASK: { type: 'string' },
