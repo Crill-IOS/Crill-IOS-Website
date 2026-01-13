@@ -14,7 +14,8 @@ import {
   Download,
   Server,
   Lightbulb,
-  X
+  X,
+  Play
 } from "lucide-react";
 
 const Index = () => {
@@ -98,15 +99,16 @@ const Index = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button asChild size="lg" variant="hero" className="text-lg px-8">
-                <a href="/playground">
-                  Live Demo ausprobieren
+                <a href="https://marketplace.visualstudio.com/items?itemName=Crill.crill-ios-scripting">
+                <Download className="mr-2 h-5 w-5" />
+                Download Crill-IOS
                 </a>
               </Button>
               
               <Button asChild size="lg" variant="outline" className="text-lg px-8">
-                <a target="_blank" rel="noopener noreferrer">
-                  <Download className="mr-2 h-5 w-5" />
-                  VS Code Marketplace (coming soon)
+                <a href="/playground">
+                  <Play className="mr-2 h-5 w-5" />
+                  Live Demo ausprobieren
                 </a>
               </Button>
             </div>

@@ -8,7 +8,7 @@ const TOKEN_MAP = {
     COMMON: { type: 'comment' },
     COMMENT: { type: 'comment' },
     // Grundkonfig
-    Hostname_Input: { type: 'string' },
+    HOSTNAME_INPUT: { type: 'string' },
     USERNAME_INPUT: { type: 'string' },
     BANNER_MESSAGE: { type: 'string' },
     DOMAINNAME_INPUT: { type: 'string' },
@@ -19,6 +19,8 @@ const TOKEN_MAP = {
     USERNAME_PASSWORD_INPUT: { type: 'string' },
     IP: { type: 'string' },
     SUBNETMASK: { type: 'string' },
+    WILDCARDMASK: { type: 'string' },
+    OSPF_AREA_NUMBER: { type: 'string' },
     // zukünftig
     OSPF_PROCESS_NUMBER: { type: 'number' },
 };

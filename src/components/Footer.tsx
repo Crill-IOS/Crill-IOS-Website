@@ -34,11 +34,11 @@ const Footer = () => {
                 <span>GitHub Repository</span>
               </a>
               <a
-                /*href="https://marketplace.visualstudio.com/items?itemName=Crill.cls-scripting"*/
+                href="https://marketplace.visualstudio.com/items?itemName=Crill.crill-ios-scripting"
                 className="flex items-center space-x-2 text-muted-foreground hover:text-coral transition-colors text-sm"
               >
                 <ExternalLink className="h-4 w-4" />
-                <span>VS Code Marketplace (coming soon)</span>
+                <span>VS Code Marketplace</span>
               </a>
 
               <a
