@@ -63,9 +63,9 @@ export class CiscoIosCompletionProvider extends DefaultCompletionProvider {
         if (detail) {
             acceptor(context, {
                 label: detail.label,
+                kind: detail.kind,
                 detail: detail.description,
                 sortText: "1",
-                kind: 1,
                 insertTextFormat: 2,
                 insertText: detail.insert
             });
@@ -94,7 +94,7 @@ export class CiscoIosCompletionProvider extends DefaultCompletionProvider {
         acceptor(context, {
             label: keyword.value,
             kind: this.getKeywordCompletionItemKind(keyword),
-            detail: 'From OLD logic',
+            detail: '',
             sortText: '1',
         });
     }

@@ -6,21 +6,47 @@
 import * as langium from 'langium';
 export const CiscoIosTerminals = {
     WS: /[ \t]+/,
+    COMMENT_TOKEN: /[#!][^\r\n]*/,
+    INTERFACE_NUMBER: /[0-9]+\/[0-9]+(\.[0-9]+)?/,
     NL: /(\r?\n)/,
     IPv4_DDC: /(([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+))/,
     INPUT_lexer: /[A-Za-z0-9\-_.,]*[A-Za-z][A-Za-z0-9\-_.,]*/,
     INT: /[0-9]+/,
 };
+export const Access_group_direction = 'Access_group_direction';
+export function isAccess_group_direction(item) {
+    return reflection.isInstance(item, Access_group_direction);
+}
+export const Acl_extended_match = 'Acl_extended_match';
+export function isAcl_extended_match(item) {
+    return reflection.isInstance(item, Acl_extended_match);
+}
+export const Acl_extended_match_dest = 'Acl_extended_match_dest';
+export function isAcl_extended_match_dest(item) {
+    return reflection.isInstance(item, Acl_extended_match_dest);
+}
+export const Acl_port_name = 'Acl_port_name';
+export function isAcl_port_name(item) {
+    return reflection.isInstance(item, Acl_port_name);
+}
+export const Acl_port_value = 'Acl_port_value';
+export function isAcl_port_value(item) {
+    return reflection.isInstance(item, Acl_port_value);
+}
+export const Acl_protocol = 'Acl_protocol';
+export function isAcl_protocol(item) {
+    return reflection.isInstance(item, Acl_protocol);
+}
+export const Acl_standard_match = 'Acl_standard_match';
+export function isAcl_standard_match(item) {
+    return reflection.isInstance(item, Acl_standard_match);
+}
 export const AlgorithmType_Options = 'AlgorithmType_Options';
 export function isAlgorithmType_Options(item) {
     return reflection.isInstance(item, AlgorithmType_Options);
 }
 export function isBanner_type(item) {
     return item === 'motd' || item === 'login' || item === 'exec' || item === 'incoming' || item === 'prompt-timeout' || item === 'slip-ppp' || item === 'config-save';
-}
-export const Bgp_cmds = 'Bgp_cmds';
-export function isBgp_cmds(item) {
-    return reflection.isInstance(item, Bgp_cmds);
 }
 export function isBgp_neighbour_next_hop_self_option(item) {
     return item === 'next-hop-self';
@@ -51,10 +77,6 @@ export const Configure_cmd = 'Configure_cmd';
 export function isConfigure_cmd(item) {
     return reflection.isInstance(item, Configure_cmd);
 }
-export const Configure_cmds = 'Configure_cmds';
-export function isConfigure_cmds(item) {
-    return reflection.isInstance(item, Configure_cmds);
-}
 export const Crypto_cmd_option = 'Crypto_cmd_option';
 export function isCrypto_cmd_option(item) {
     return reflection.isInstance(item, Crypto_cmd_option);
@@ -68,16 +90,8 @@ export function isDuplex_full(item) {
 export function isDuplex_half(item) {
     return item === 'half';
 }
-export const Enable_cmds = 'Enable_cmds';
-export function isEnable_cmds(item) {
-    return reflection.isInstance(item, Enable_cmds);
-}
 export function isExecOption(item) {
     return item === 'exec';
-}
-export const ExecTimeout_cmd = 'ExecTimeout_cmd';
-export function isExecTimeout_cmd(item) {
-    return reflection.isInstance(item, ExecTimeout_cmd);
 }
 export const Generate_cmd_option = 'Generate_cmd_option';
 export function isGenerate_cmd_option(item) {
@@ -86,28 +100,21 @@ export function isGenerate_cmd_option(item) {
 export function isIncomingOption(item) {
     return item === 'incoming';
 }
-export function isINPUT(item) {
-    return (typeof item === 'string' && (/[A-Za-z0-9\-_.,]*[A-Za-z][A-Za-z0-9\-_.,]*/.test(item)));
-}
-export const Interface_fastethernet_cmds = 'Interface_fastethernet_cmds';
-export function isInterface_fastethernet_cmds(item) {
-    return reflection.isInstance(item, Interface_fastethernet_cmds);
-}
-export const Interface_gigabitethernet_cmds = 'Interface_gigabitethernet_cmds';
-export function isInterface_gigabitethernet_cmds(item) {
-    return reflection.isInstance(item, Interface_gigabitethernet_cmds);
-}
 export const Interface_types = 'Interface_types';
 export function isInterface_types(item) {
     return reflection.isInstance(item, Interface_types);
 }
-export const Interface_vlan_cmds = 'Interface_vlan_cmds';
-export function isInterface_vlan_cmds(item) {
-    return reflection.isInstance(item, Interface_vlan_cmds);
+export const Ip_access_list_option = 'Ip_access_list_option';
+export function isIp_access_list_option(item) {
+    return reflection.isInstance(item, Ip_access_list_option);
 }
 export const IP_cmd_option = 'IP_cmd_option';
 export function isIP_cmd_option(item) {
     return reflection.isInstance(item, IP_cmd_option);
+}
+export const Ip_cmd_option_ospf_options = 'Ip_cmd_option_ospf_options';
+export function isIp_cmd_option_ospf_options(item) {
+    return reflection.isInstance(item, Ip_cmd_option_ospf_options);
 }
 export const Ip_cmd_options = 'Ip_cmd_options';
 export function isIp_cmd_options(item) {
@@ -117,17 +124,9 @@ export const Key_cmd_option = 'Key_cmd_option';
 export function isKey_cmd_option(item) {
     return reflection.isInstance(item, Key_cmd_option);
 }
-export const Line_console_cmds = 'Line_console_cmds';
-export function isLine_console_cmds(item) {
-    return reflection.isInstance(item, Line_console_cmds);
-}
 export const Line_types = 'Line_types';
 export function isLine_types(item) {
     return reflection.isInstance(item, Line_types);
-}
-export const Line_vty_cmds = 'Line_vty_cmds';
-export function isLine_vty_cmds(item) {
-    return reflection.isInstance(item, Line_vty_cmds);
 }
 export const Logging_cmd = 'Logging_cmd';
 export function isLogging_cmd(item) {
@@ -143,6 +142,14 @@ export function isLoginOption(item) {
 export function isMOTDOption(item) {
     return item === 'motd';
 }
+export const Nat_direction = 'Nat_direction';
+export function isNat_direction(item) {
+    return reflection.isInstance(item, Nat_direction);
+}
+export const Nat_interface_types = 'Nat_interface_types';
+export function isNat_interface_types(item) {
+    return reflection.isInstance(item, Nat_interface_types);
+}
 export const No_ip_cmd_options = 'No_ip_cmd_options';
 export function isNo_ip_cmd_options(item) {
     return reflection.isInstance(item, No_ip_cmd_options);
@@ -151,10 +158,6 @@ export const No_options = 'No_options';
 export function isNo_options(item) {
     return reflection.isInstance(item, No_options);
 }
-export const Ospf_cmds = 'Ospf_cmds';
-export function isOspf_cmds(item) {
-    return reflection.isInstance(item, Ospf_cmds);
-}
 export const Ospf_interface_types = 'Ospf_interface_types';
 export function isOspf_interface_types(item) {
     return reflection.isInstance(item, Ospf_interface_types);
@@ -162,21 +165,17 @@ export function isOspf_interface_types(item) {
 export function isPromptTimeoutOption(item) {
     return item === 'prompt-timeout';
 }
-export const Rip_cmds = 'Rip_cmds';
-export function isRip_cmds(item) {
-    return reflection.isInstance(item, Rip_cmds);
-}
 export const Rip_interface_types = 'Rip_interface_types';
 export function isRip_interface_types(item) {
     return reflection.isInstance(item, Rip_interface_types);
 }
-export const Router_cmd_option = 'Router_cmd_option';
-export function isRouter_cmd_option(item) {
-    return reflection.isInstance(item, Router_cmd_option);
-}
 export const Rsa_cmd_option = 'Rsa_cmd_option';
 export function isRsa_cmd_option(item) {
     return reflection.isInstance(item, Rsa_cmd_option);
+}
+export const Show_cmd_options = 'Show_cmd_options';
+export function isShow_cmd_options(item) {
+    return reflection.isInstance(item, Show_cmd_options);
 }
 export function isSlipPPPOption(item) {
     return item === 'slip-ppp';
@@ -206,6 +205,150 @@ export const Username_cmd_option = 'Username_cmd_option';
 export function isUsername_cmd_option(item) {
     return reflection.isInstance(item, Username_cmd_option);
 }
+export const Access_group_in = 'Access_group_in';
+export function isAccess_group_in(item) {
+    return reflection.isInstance(item, Access_group_in);
+}
+export const Access_group_out = 'Access_group_out';
+export function isAccess_group_out(item) {
+    return reflection.isInstance(item, Access_group_out);
+}
+export const Acl_any_match = 'Acl_any_match';
+export function isAcl_any_match(item) {
+    return reflection.isInstance(item, Acl_any_match);
+}
+export const Acl_dest_any_match = 'Acl_dest_any_match';
+export function isAcl_dest_any_match(item) {
+    return reflection.isInstance(item, Acl_dest_any_match);
+}
+export const Acl_dest_host_match = 'Acl_dest_host_match';
+export function isAcl_dest_host_match(item) {
+    return reflection.isInstance(item, Acl_dest_host_match);
+}
+export const Acl_dest_network_match = 'Acl_dest_network_match';
+export function isAcl_dest_network_match(item) {
+    return reflection.isInstance(item, Acl_dest_network_match);
+}
+export const Acl_extended_cmd = 'Acl_extended_cmd';
+export function isAcl_extended_cmd(item) {
+    return reflection.isInstance(item, Acl_extended_cmd);
+}
+export const Acl_extended_deny_cmd = 'Acl_extended_deny_cmd';
+export function isAcl_extended_deny_cmd(item) {
+    return reflection.isInstance(item, Acl_extended_deny_cmd);
+}
+export const Acl_extended_permit_cmd = 'Acl_extended_permit_cmd';
+export function isAcl_extended_permit_cmd(item) {
+    return reflection.isInstance(item, Acl_extended_permit_cmd);
+}
+export const Acl_host_match = 'Acl_host_match';
+export function isAcl_host_match(item) {
+    return reflection.isInstance(item, Acl_host_match);
+}
+export const ACL_NAME = 'ACL_NAME';
+export function isACL_NAME(item) {
+    return reflection.isInstance(item, ACL_NAME);
+}
+export const Acl_network_match = 'Acl_network_match';
+export function isAcl_network_match(item) {
+    return reflection.isInstance(item, Acl_network_match);
+}
+export const ACL_NUMBER = 'ACL_NUMBER';
+export function isACL_NUMBER(item) {
+    return reflection.isInstance(item, ACL_NUMBER);
+}
+export const Acl_port_bgp = 'Acl_port_bgp';
+export function isAcl_port_bgp(item) {
+    return reflection.isInstance(item, Acl_port_bgp);
+}
+export const Acl_port_domain = 'Acl_port_domain';
+export function isAcl_port_domain(item) {
+    return reflection.isInstance(item, Acl_port_domain);
+}
+export const Acl_port_ftp = 'Acl_port_ftp';
+export function isAcl_port_ftp(item) {
+    return reflection.isInstance(item, Acl_port_ftp);
+}
+export const Acl_port_http = 'Acl_port_http';
+export function isAcl_port_http(item) {
+    return reflection.isInstance(item, Acl_port_http);
+}
+export const Acl_port_https = 'Acl_port_https';
+export function isAcl_port_https(item) {
+    return reflection.isInstance(item, Acl_port_https);
+}
+export const Acl_port_isakmp = 'Acl_port_isakmp';
+export function isAcl_port_isakmp(item) {
+    return reflection.isInstance(item, Acl_port_isakmp);
+}
+export const Acl_port_match = 'Acl_port_match';
+export function isAcl_port_match(item) {
+    return reflection.isInstance(item, Acl_port_match);
+}
+export const Acl_port_ntp = 'Acl_port_ntp';
+export function isAcl_port_ntp(item) {
+    return reflection.isInstance(item, Acl_port_ntp);
+}
+export const Acl_port_number = 'Acl_port_number';
+export function isAcl_port_number(item) {
+    return reflection.isInstance(item, Acl_port_number);
+}
+export const ACL_PORT_NUMBER = 'ACL_PORT_NUMBER';
+export function isACL_PORT_NUMBER(item) {
+    return reflection.isInstance(item, ACL_PORT_NUMBER);
+}
+export const Acl_port_snmp = 'Acl_port_snmp';
+export function isAcl_port_snmp(item) {
+    return reflection.isInstance(item, Acl_port_snmp);
+}
+export const Acl_port_ssh = 'Acl_port_ssh';
+export function isAcl_port_ssh(item) {
+    return reflection.isInstance(item, Acl_port_ssh);
+}
+export const Acl_port_telnet = 'Acl_port_telnet';
+export function isAcl_port_telnet(item) {
+    return reflection.isInstance(item, Acl_port_telnet);
+}
+export const Acl_port_tftp = 'Acl_port_tftp';
+export function isAcl_port_tftp(item) {
+    return reflection.isInstance(item, Acl_port_tftp);
+}
+export const Acl_protocol_gre = 'Acl_protocol_gre';
+export function isAcl_protocol_gre(item) {
+    return reflection.isInstance(item, Acl_protocol_gre);
+}
+export const Acl_protocol_icmp = 'Acl_protocol_icmp';
+export function isAcl_protocol_icmp(item) {
+    return reflection.isInstance(item, Acl_protocol_icmp);
+}
+export const Acl_protocol_ip = 'Acl_protocol_ip';
+export function isAcl_protocol_ip(item) {
+    return reflection.isInstance(item, Acl_protocol_ip);
+}
+export const Acl_protocol_tcp = 'Acl_protocol_tcp';
+export function isAcl_protocol_tcp(item) {
+    return reflection.isInstance(item, Acl_protocol_tcp);
+}
+export const Acl_protocol_udp = 'Acl_protocol_udp';
+export function isAcl_protocol_udp(item) {
+    return reflection.isInstance(item, Acl_protocol_udp);
+}
+export const Acl_standard_cmd = 'Acl_standard_cmd';
+export function isAcl_standard_cmd(item) {
+    return reflection.isInstance(item, Acl_standard_cmd);
+}
+export const Acl_standard_deny_cmd = 'Acl_standard_deny_cmd';
+export function isAcl_standard_deny_cmd(item) {
+    return reflection.isInstance(item, Acl_standard_deny_cmd);
+}
+export const Acl_standard_permit_cmd = 'Acl_standard_permit_cmd';
+export function isAcl_standard_permit_cmd(item) {
+    return reflection.isInstance(item, Acl_standard_permit_cmd);
+}
+export const ACL_STATEMENT_NUMBER = 'ACL_STATEMENT_NUMBER';
+export function isACL_STATEMENT_NUMBER(item) {
+    return reflection.isInstance(item, ACL_STATEMENT_NUMBER);
+}
 export const AlgorithmTypeOption = 'AlgorithmTypeOption';
 export function isAlgorithmTypeOption(item) {
     return reflection.isInstance(item, AlgorithmTypeOption);
@@ -222,9 +365,13 @@ export const BANNER_MESSAGE = 'BANNER_MESSAGE';
 export function isBANNER_MESSAGE(item) {
     return reflection.isInstance(item, BANNER_MESSAGE);
 }
-export const Bgp_cmd = 'Bgp_cmd';
-export function isBgp_cmd(item) {
-    return reflection.isInstance(item, Bgp_cmd);
+export const BGP_AS_NUMBER = 'BGP_AS_NUMBER';
+export function isBGP_AS_NUMBER(item) {
+    return reflection.isInstance(item, BGP_AS_NUMBER);
+}
+export const BGP_EBGP_MULTIHOP_NUMBER = 'BGP_EBGP_MULTIHOP_NUMBER';
+export function isBGP_EBGP_MULTIHOP_NUMBER(item) {
+    return reflection.isInstance(item, BGP_EBGP_MULTIHOP_NUMBER);
 }
 export const Bgp_neigbour_ebgp_multihop_option = 'Bgp_neigbour_ebgp_multihop_option';
 export function isBgp_neigbour_ebgp_multihop_option(item) {
@@ -245,10 +392,6 @@ export function isBgp_network_cmd(item) {
 export const Bgp_router_id_cmd = 'Bgp_router_id_cmd';
 export function isBgp_router_id_cmd(item) {
     return reflection.isInstance(item, Bgp_router_id_cmd);
-}
-export const Bgp_update_source_interface_number = 'Bgp_update_source_interface_number';
-export function isBgp_update_source_interface_number(item) {
-    return reflection.isInstance(item, Bgp_update_source_interface_number);
 }
 export const Bgp_update_source_interface_type_fastethernet = 'Bgp_update_source_interface_type_fastethernet';
 export function isBgp_update_source_interface_type_fastethernet(item) {
@@ -274,6 +417,10 @@ export const Configure_cmd_options = 'Configure_cmd_options';
 export function isConfigure_cmd_options(item) {
     return reflection.isInstance(item, Configure_cmd_options);
 }
+export const CONSOLE_NUMBER = 'CONSOLE_NUMBER';
+export function isCONSOLE_NUMBER(item) {
+    return reflection.isInstance(item, CONSOLE_NUMBER);
+}
 export const Crypto_cmd = 'Crypto_cmd';
 export function isCrypto_cmd(item) {
     return reflection.isInstance(item, Crypto_cmd);
@@ -281,6 +428,10 @@ export function isCrypto_cmd(item) {
 export const Description_cmd = 'Description_cmd';
 export function isDescription_cmd(item) {
     return reflection.isInstance(item, Description_cmd);
+}
+export const DESCRIPTION_INPUT = 'DESCRIPTION_INPUT';
+export function isDESCRIPTION_INPUT(item) {
+    return reflection.isInstance(item, DESCRIPTION_INPUT);
 }
 export const Domainname_cmd = 'Domainname_cmd';
 export function isDomainname_cmd(item) {
@@ -298,9 +449,13 @@ export const Duplex_option = 'Duplex_option';
 export function isDuplex_option(item) {
     return reflection.isInstance(item, Duplex_option);
 }
-export const Exit = 'Exit';
-export function isExit(item) {
-    return reflection.isInstance(item, Exit);
+export const Enable_cmds = 'Enable_cmds';
+export function isEnable_cmds(item) {
+    return reflection.isInstance(item, Enable_cmds);
+}
+export const ExecTimeout_cmd = 'ExecTimeout_cmd';
+export function isExecTimeout_cmd(item) {
+    return reflection.isInstance(item, ExecTimeout_cmd);
 }
 export const Generate_cmd = 'Generate_cmd';
 export function isGenerate_cmd(item) {
@@ -314,13 +469,21 @@ export const HOSTNAME_INPUT = 'HOSTNAME_INPUT';
 export function isHOSTNAME_INPUT(item) {
     return reflection.isInstance(item, HOSTNAME_INPUT);
 }
+export const INTERFACE_CARRIER_DELAY_NUMBER = 'INTERFACE_CARRIER_DELAY_NUMBER';
+export function isINTERFACE_CARRIER_DELAY_NUMBER(item) {
+    return reflection.isInstance(item, INTERFACE_CARRIER_DELAY_NUMBER);
+}
 export const Interface_cmd = 'Interface_cmd';
 export function isInterface_cmd(item) {
     return reflection.isInstance(item, Interface_cmd);
 }
-export const Interface_number = 'Interface_number';
-export function isInterface_number(item) {
-    return reflection.isInstance(item, Interface_number);
+export const INTERFACE_NUMBER_INPUT = 'INTERFACE_NUMBER_INPUT';
+export function isINTERFACE_NUMBER_INPUT(item) {
+    return reflection.isInstance(item, INTERFACE_NUMBER_INPUT);
+}
+export const INTERFACE_SPEED_NUMBER = 'INTERFACE_SPEED_NUMBER';
+export function isINTERFACE_SPEED_NUMBER(item) {
+    return reflection.isInstance(item, INTERFACE_SPEED_NUMBER);
 }
 export const Interface_type_fastethernet = 'Interface_type_fastethernet';
 export function isInterface_type_fastethernet(item) {
@@ -334,9 +497,17 @@ export const Interface_type_vlan = 'Interface_type_vlan';
 export function isInterface_type_vlan(item) {
     return reflection.isInstance(item, Interface_type_vlan);
 }
+export const INTERFACE_VLAN_NUMBER = 'INTERFACE_VLAN_NUMBER';
+export function isINTERFACE_VLAN_NUMBER(item) {
+    return reflection.isInstance(item, INTERFACE_VLAN_NUMBER);
+}
 export const IP = 'IP';
 export function isIP(item) {
     return reflection.isInstance(item, IP);
+}
+export const Ip_access_list_cmd_option = 'Ip_access_list_cmd_option';
+export function isIp_access_list_cmd_option(item) {
+    return reflection.isInstance(item, Ip_access_list_cmd_option);
 }
 export const IP_cmd = 'IP_cmd';
 export function isIP_cmd(item) {
@@ -346,17 +517,61 @@ export const IP_cmd_interface = 'IP_cmd_interface';
 export function isIP_cmd_interface(item) {
     return reflection.isInstance(item, IP_cmd_interface);
 }
+export const Ip_cmd_option_access_group = 'Ip_cmd_option_access_group';
+export function isIp_cmd_option_access_group(item) {
+    return reflection.isInstance(item, Ip_cmd_option_access_group);
+}
 export const Ip_cmd_option_address = 'Ip_cmd_option_address';
 export function isIp_cmd_option_address(item) {
     return reflection.isInstance(item, Ip_cmd_option_address);
+}
+export const Ip_cmd_option_nat = 'Ip_cmd_option_nat';
+export function isIp_cmd_option_nat(item) {
+    return reflection.isInstance(item, Ip_cmd_option_nat);
 }
 export const Ip_cmd_option_ospf = 'Ip_cmd_option_ospf';
 export function isIp_cmd_option_ospf(item) {
     return reflection.isInstance(item, Ip_cmd_option_ospf);
 }
+export const Ip_cmd_option_ospf_option_cost = 'Ip_cmd_option_ospf_option_cost';
+export function isIp_cmd_option_ospf_option_cost(item) {
+    return reflection.isInstance(item, Ip_cmd_option_ospf_option_cost);
+}
+export const Ip_cmd_option_ospf_option_priority = 'Ip_cmd_option_ospf_option_priority';
+export function isIp_cmd_option_ospf_option_priority(item) {
+    return reflection.isInstance(item, Ip_cmd_option_ospf_option_priority);
+}
 export const Ip_Helper_cmd = 'Ip_Helper_cmd';
 export function isIp_Helper_cmd(item) {
     return reflection.isInstance(item, Ip_Helper_cmd);
+}
+export const Ip_nat_cmd = 'Ip_nat_cmd';
+export function isIp_nat_cmd(item) {
+    return reflection.isInstance(item, Ip_nat_cmd);
+}
+export const Ip_nat_cmd_option = 'Ip_nat_cmd_option';
+export function isIp_nat_cmd_option(item) {
+    return reflection.isInstance(item, Ip_nat_cmd_option);
+}
+export const Ip_nat_inside_cmd = 'Ip_nat_inside_cmd';
+export function isIp_nat_inside_cmd(item) {
+    return reflection.isInstance(item, Ip_nat_inside_cmd);
+}
+export const Ip_nat_inside_source_cmd = 'Ip_nat_inside_source_cmd';
+export function isIp_nat_inside_source_cmd(item) {
+    return reflection.isInstance(item, Ip_nat_inside_source_cmd);
+}
+export const Ip_nat_inside_source_list_cmd = 'Ip_nat_inside_source_list_cmd';
+export function isIp_nat_inside_source_list_cmd(item) {
+    return reflection.isInstance(item, Ip_nat_inside_source_list_cmd);
+}
+export const Ip_nat_inside_source_list_interface_cmd = 'Ip_nat_inside_source_list_interface_cmd';
+export function isIp_nat_inside_source_list_interface_cmd(item) {
+    return reflection.isInstance(item, Ip_nat_inside_source_list_interface_cmd);
+}
+export const Ip_nat_overload_cmd = 'Ip_nat_overload_cmd';
+export function isIp_nat_overload_cmd(item) {
+    return reflection.isInstance(item, Ip_nat_overload_cmd);
 }
 export const Key_cmd = 'Key_cmd';
 export function isKey_cmd(item) {
@@ -406,6 +621,26 @@ export const MODULUS_INPUT = 'MODULUS_INPUT';
 export function isMODULUS_INPUT(item) {
     return reflection.isInstance(item, MODULUS_INPUT);
 }
+export const Nat_inside = 'Nat_inside';
+export function isNat_inside(item) {
+    return reflection.isInstance(item, Nat_inside);
+}
+export const Nat_interface_fastethernet = 'Nat_interface_fastethernet';
+export function isNat_interface_fastethernet(item) {
+    return reflection.isInstance(item, Nat_interface_fastethernet);
+}
+export const Nat_interface_gigabitethernet = 'Nat_interface_gigabitethernet';
+export function isNat_interface_gigabitethernet(item) {
+    return reflection.isInstance(item, Nat_interface_gigabitethernet);
+}
+export const NAT_INTERFACE_NUMBER_INPUT = 'NAT_INTERFACE_NUMBER_INPUT';
+export function isNAT_INTERFACE_NUMBER_INPUT(item) {
+    return reflection.isInstance(item, NAT_INTERFACE_NUMBER_INPUT);
+}
+export const Nat_outside = 'Nat_outside';
+export function isNat_outside(item) {
+    return reflection.isInstance(item, Nat_outside);
+}
 export const No_banner_cmd = 'No_banner_cmd';
 export function isNo_banner_cmd(item) {
     return reflection.isInstance(item, No_banner_cmd);
@@ -434,9 +669,9 @@ export const OSPF_AREA_NUMBER = 'OSPF_AREA_NUMBER';
 export function isOSPF_AREA_NUMBER(item) {
     return reflection.isInstance(item, OSPF_AREA_NUMBER);
 }
-export const Ospf_cmd = 'Ospf_cmd';
-export function isOspf_cmd(item) {
-    return reflection.isInstance(item, Ospf_cmd);
+export const OSPF_COST_NUMBER = 'OSPF_COST_NUMBER';
+export function isOSPF_COST_NUMBER(item) {
+    return reflection.isInstance(item, OSPF_COST_NUMBER);
 }
 export const Ospf_default_information_cmd = 'Ospf_default_information_cmd';
 export function isOspf_default_information_cmd(item) {
@@ -454,9 +689,9 @@ export const Ospf_passive_interface_cmd = 'Ospf_passive_interface_cmd';
 export function isOspf_passive_interface_cmd(item) {
     return reflection.isInstance(item, Ospf_passive_interface_cmd);
 }
-export const Ospf_passive_interface_number = 'Ospf_passive_interface_number';
-export function isOspf_passive_interface_number(item) {
-    return reflection.isInstance(item, Ospf_passive_interface_number);
+export const OSPF_PASSIVE_INTERFACE_NUMBER = 'OSPF_PASSIVE_INTERFACE_NUMBER';
+export function isOSPF_PASSIVE_INTERFACE_NUMBER(item) {
+    return reflection.isInstance(item, OSPF_PASSIVE_INTERFACE_NUMBER);
 }
 export const Ospf_passive_interface_type_fastethernet = 'Ospf_passive_interface_type_fastethernet';
 export function isOspf_passive_interface_type_fastethernet(item) {
@@ -469,6 +704,10 @@ export function isOspf_passive_interface_type_gigabitethernet(item) {
 export const Ospf_priority_cmd = 'Ospf_priority_cmd';
 export function isOspf_priority_cmd(item) {
     return reflection.isInstance(item, Ospf_priority_cmd);
+}
+export const OSPF_PRIORITY_NUMBER = 'OSPF_PRIORITY_NUMBER';
+export function isOSPF_PRIORITY_NUMBER(item) {
+    return reflection.isInstance(item, OSPF_PRIORITY_NUMBER);
 }
 export const OSPF_PROCESS_NUMBER = 'OSPF_PROCESS_NUMBER';
 export function isOSPF_PROCESS_NUMBER(item) {
@@ -502,10 +741,6 @@ export const PrivilegeOption = 'PrivilegeOption';
 export function isPrivilegeOption(item) {
     return reflection.isInstance(item, PrivilegeOption);
 }
-export const Rip_cmd = 'Rip_cmd';
-export function isRip_cmd(item) {
-    return reflection.isInstance(item, Rip_cmd);
-}
 export const Rip_default_information_cmd = 'Rip_default_information_cmd';
 export function isRip_default_information_cmd(item) {
     return reflection.isInstance(item, Rip_default_information_cmd);
@@ -530,9 +765,9 @@ export const Rip_passive_interface_cmd = 'Rip_passive_interface_cmd';
 export function isRip_passive_interface_cmd(item) {
     return reflection.isInstance(item, Rip_passive_interface_cmd);
 }
-export const Rip_passive_interface_number = 'Rip_passive_interface_number';
-export function isRip_passive_interface_number(item) {
-    return reflection.isInstance(item, Rip_passive_interface_number);
+export const RIP_PASSIVE_INTERFACE_NUMBER = 'RIP_PASSIVE_INTERFACE_NUMBER';
+export function isRIP_PASSIVE_INTERFACE_NUMBER(item) {
+    return reflection.isInstance(item, RIP_PASSIVE_INTERFACE_NUMBER);
 }
 export const Rip_passive_interface_type_fastethernet = 'Rip_passive_interface_type_fastethernet';
 export function isRip_passive_interface_type_fastethernet(item) {
@@ -541,10 +776,6 @@ export function isRip_passive_interface_type_fastethernet(item) {
 export const Rip_passive_interface_type_gigabitethernet = 'Rip_passive_interface_type_gigabitethernet';
 export function isRip_passive_interface_type_gigabitethernet(item) {
     return reflection.isInstance(item, Rip_passive_interface_type_gigabitethernet);
-}
-export const Rip_passive_Sub_Interface_number = 'Rip_passive_Sub_Interface_number';
-export function isRip_passive_Sub_Interface_number(item) {
-    return reflection.isInstance(item, Rip_passive_Sub_Interface_number);
 }
 export const Rip_redistribute_cmd = 'Rip_redistribute_cmd';
 export function isRip_redistribute_cmd(item) {
@@ -558,9 +789,17 @@ export const Rip_version_cmd = 'Rip_version_cmd';
 export function isRip_version_cmd(item) {
     return reflection.isInstance(item, Rip_version_cmd);
 }
+export const RIP_VERSION_NUMBER = 'RIP_VERSION_NUMBER';
+export function isRIP_VERSION_NUMBER(item) {
+    return reflection.isInstance(item, RIP_VERSION_NUMBER);
+}
 export const Router_cmd = 'Router_cmd';
 export function isRouter_cmd(item) {
     return reflection.isInstance(item, Router_cmd);
+}
+export const Router_cmd_option = 'Router_cmd_option';
+export function isRouter_cmd_option(item) {
+    return reflection.isInstance(item, Router_cmd_option);
 }
 export const Rsa_cmd = 'Rsa_cmd';
 export function isRsa_cmd(item) {
@@ -594,9 +833,13 @@ export const Show_cmd = 'Show_cmd';
 export function isShow_cmd(item) {
     return reflection.isInstance(item, Show_cmd);
 }
-export const Show_cmd_options = 'Show_cmd_options';
-export function isShow_cmd_options(item) {
-    return reflection.isInstance(item, Show_cmd_options);
+export const Show_interface_option = 'Show_interface_option';
+export function isShow_interface_option(item) {
+    return reflection.isInstance(item, Show_interface_option);
+}
+export const Show_run_option = 'Show_run_option';
+export function isShow_run_option(item) {
+    return reflection.isInstance(item, Show_run_option);
 }
 export const Shutdown_cmd = 'Shutdown_cmd';
 export function isShutdown_cmd(item) {
@@ -638,6 +881,10 @@ export const TransportProto = 'TransportProto';
 export function isTransportProto(item) {
     return reflection.isInstance(item, TransportProto);
 }
+export const UPDATE_SOURCE_INTERFACE_NUMBER_INPUT = 'UPDATE_SOURCE_INTERFACE_NUMBER_INPUT';
+export function isUPDATE_SOURCE_INTERFACE_NUMBER_INPUT(item) {
+    return reflection.isInstance(item, UPDATE_SOURCE_INTERFACE_NUMBER_INPUT);
+}
 export const UsageKeys_cmd = 'UsageKeys_cmd';
 export function isUsageKeys_cmd(item) {
     return reflection.isInstance(item, UsageKeys_cmd);
@@ -658,59 +905,171 @@ export const VERSION_INPUT = 'VERSION_INPUT';
 export function isVERSION_INPUT(item) {
     return reflection.isInstance(item, VERSION_INPUT);
 }
+export const VTY_NUMBER = 'VTY_NUMBER';
+export function isVTY_NUMBER(item) {
+    return reflection.isInstance(item, VTY_NUMBER);
+}
 export const WILDCARDMASK = 'WILDCARDMASK';
 export function isWILDCARDMASK(item) {
     return reflection.isInstance(item, WILDCARDMASK);
 }
-export const Bgp_update_source_Sub_Interface_number = 'Bgp_update_source_Sub_Interface_number';
-export function isBgp_update_source_Sub_Interface_number(item) {
-    return reflection.isInstance(item, Bgp_update_source_Sub_Interface_number);
+export const Acl_extended_cmds = 'Acl_extended_cmds';
+export function isAcl_extended_cmds(item) {
+    return reflection.isInstance(item, Acl_extended_cmds);
 }
-export const Sub_Interface_number = 'Sub_Interface_number';
-export function isSub_Interface_number(item) {
-    return reflection.isInstance(item, Sub_Interface_number);
+export const Acl_standard_cmds = 'Acl_standard_cmds';
+export function isAcl_standard_cmds(item) {
+    return reflection.isInstance(item, Acl_standard_cmds);
 }
-export const Ospf_passive_Sub_Interface_number = 'Ospf_passive_Sub_Interface_number';
-export function isOspf_passive_Sub_Interface_number(item) {
-    return reflection.isInstance(item, Ospf_passive_Sub_Interface_number);
+export const Configure_cmds = 'Configure_cmds';
+export function isConfigure_cmds(item) {
+    return reflection.isInstance(item, Configure_cmds);
+}
+export const Interface_fastethernet_cmds = 'Interface_fastethernet_cmds';
+export function isInterface_fastethernet_cmds(item) {
+    return reflection.isInstance(item, Interface_fastethernet_cmds);
+}
+export const Interface_gigabitethernet_cmds = 'Interface_gigabitethernet_cmds';
+export function isInterface_gigabitethernet_cmds(item) {
+    return reflection.isInstance(item, Interface_gigabitethernet_cmds);
+}
+export const Interface_vlan_cmds = 'Interface_vlan_cmds';
+export function isInterface_vlan_cmds(item) {
+    return reflection.isInstance(item, Interface_vlan_cmds);
+}
+export const Line_console_cmds = 'Line_console_cmds';
+export function isLine_console_cmds(item) {
+    return reflection.isInstance(item, Line_console_cmds);
+}
+export const Line_vty_cmds = 'Line_vty_cmds';
+export function isLine_vty_cmds(item) {
+    return reflection.isInstance(item, Line_vty_cmds);
+}
+export const Bgp_cmds = 'Bgp_cmds';
+export function isBgp_cmds(item) {
+    return reflection.isInstance(item, Bgp_cmds);
+}
+export const Ospf_cmds = 'Ospf_cmds';
+export function isOspf_cmds(item) {
+    return reflection.isInstance(item, Ospf_cmds);
+}
+export const Rip_cmds = 'Rip_cmds';
+export function isRip_cmds(item) {
+    return reflection.isInstance(item, Rip_cmds);
+}
+export const Exit_acl_extended = 'Exit_acl_extended';
+export function isExit_acl_extended(item) {
+    return reflection.isInstance(item, Exit_acl_extended);
+}
+export const Exit_acl_standard = 'Exit_acl_standard';
+export function isExit_acl_standard(item) {
+    return reflection.isInstance(item, Exit_acl_standard);
+}
+export const Exit_configure = 'Exit_configure';
+export function isExit_configure(item) {
+    return reflection.isInstance(item, Exit_configure);
+}
+export const Exit_interface_fastethernet = 'Exit_interface_fastethernet';
+export function isExit_interface_fastethernet(item) {
+    return reflection.isInstance(item, Exit_interface_fastethernet);
+}
+export const Exit_interface_gigabitethernet = 'Exit_interface_gigabitethernet';
+export function isExit_interface_gigabitethernet(item) {
+    return reflection.isInstance(item, Exit_interface_gigabitethernet);
+}
+export const Exit_interface_vlan = 'Exit_interface_vlan';
+export function isExit_interface_vlan(item) {
+    return reflection.isInstance(item, Exit_interface_vlan);
+}
+export const Exit_line_console = 'Exit_line_console';
+export function isExit_line_console(item) {
+    return reflection.isInstance(item, Exit_line_console);
+}
+export const Exit_line_vty = 'Exit_line_vty';
+export function isExit_line_vty(item) {
+    return reflection.isInstance(item, Exit_line_vty);
+}
+export const Exit_bgp = 'Exit_bgp';
+export function isExit_bgp(item) {
+    return reflection.isInstance(item, Exit_bgp);
+}
+export const Exit_ospf = 'Exit_ospf';
+export function isExit_ospf(item) {
+    return reflection.isInstance(item, Exit_ospf);
+}
+export const Exit_rip = 'Exit_rip';
+export function isExit_rip(item) {
+    return reflection.isInstance(item, Exit_rip);
 }
 export class CiscoIosAstReflection extends langium.AbstractAstReflection {
     getAllTypes() {
-        return [AlgorithmTypeOption, AlgorithmType_Options, BANNER_MESSAGE, Banner_cmd, Banner_cmd_option, Bgp_cmd, Bgp_cmds, Bgp_neigbour_ebgp_multihop_option, Bgp_neighbor_cmd, Bgp_neighbour_Remote_as_option, Bgp_neighbour_options, Bgp_neighbour_update_source_option, Bgp_network_cmd, Bgp_router_id_cmd, Bgp_update_source_Sub_Interface_number, Bgp_update_source_interface_number, Bgp_update_source_interface_type_fastethernet, Bgp_update_source_interface_type_gigabitethernet, Bgp_update_source_interface_types, COMMENT, COMMENTLINE, COMMON, CarrierDelay_cmd, Configure_cmd, Configure_cmd_options, Configure_cmds, Crypto_cmd, Crypto_cmd_option, DOMAINNAME_INPUT, Description_cmd, Domainname_cmd, Duplex_cmd, Duplex_option, Enable_cmds, ExecTimeout_cmd, Exit, Generate_cmd, Generate_cmd_option, HOSTNAME_INPUT, Hostname_cmd, IP, IP_cmd, IP_cmd_interface, IP_cmd_option, Interface_cmd, Interface_fastethernet_cmds, Interface_gigabitethernet_cmds, Interface_number, Interface_type_fastethernet, Interface_type_gigabitethernet, Interface_type_vlan, Interface_types, Interface_vlan_cmds, Ip_Helper_cmd, Ip_cmd_option_address, Ip_cmd_option_ospf, Ip_cmd_options, KEYWORDS, Key_cmd, Key_cmd_option, Line_ExecTimeoutValue, Line_LoggingOption, Line_LoginOption, Line_cmd, Line_console_cmds, Line_type_console, Line_type_vty, Line_types, Line_vty_cmds, Logging_cmd, Login_cmd, MD5Option, MD5Option_cmd, MODULUS_INPUT, Modulus_cmd, No_banner_cmd, No_cmd, No_cmd_interface, No_cmd_interface_option, No_ip_cmd, No_ip_cmd_option_domain_lookup, No_ip_cmd_options, No_options, OSPF_AREA_NUMBER, OSPF_PROCESS_NUMBER, Ospf_cmd, Ospf_cmds, Ospf_default_information_cmd, Ospf_default_information_cmd_options, Ospf_interface_types, Ospf_network_cmd, Ospf_passive_Sub_Interface_number, Ospf_passive_interface_cmd, Ospf_passive_interface_number, Ospf_passive_interface_type_fastethernet, Ospf_passive_interface_type_gigabitethernet, Ospf_priority_cmd, Ospf_redistribute_cmd, Ospf_redistribute_cmd_options, Ospf_router_id_cmd, PRIVILEGE_INPUT, PasswordOption, Ping_cmd, PrivilegeOption, Rip_cmd, Rip_cmds, Rip_default_information_cmd, Rip_default_information_cmd_options, Rip_interface_types, Rip_network_cmd, Rip_no_cmd_options, Rip_no_cmds, Rip_passive_Sub_Interface_number, Rip_passive_interface_cmd, Rip_passive_interface_number, Rip_passive_interface_type_fastethernet, Rip_passive_interface_type_gigabitethernet, Rip_redistribute_cmd, Rip_redistribute_cmd_options, Rip_version_cmd, Router_cmd, Router_cmd_option, Rsa_cmd, Rsa_cmd_option, SSHOptions, SSH_cmd, SUBNETMASK, Script, ScryptOption, ScryptOption_cmd, SecretOption, Sha256Option, Sha256Option_cmd, Show_cmd, Show_cmd_options, Shutdown_cmd, Speed_cmd, Speed_cmd_fe, Stat, Sub_Interface_number, TransportInputList, TransportInput_cmd, TransportProto, Transport_cmd, Transport_cmd_option, USERNAME_INPUT, USERNAME_PASSWORD_INPUT, UsageKeys_Option, UsageKeys_cmd, Username_cmd, Username_cmd_option, VERSION_INPUT, WILDCARDMASK];
+        return [ACL_NAME, ACL_NUMBER, ACL_PORT_NUMBER, ACL_STATEMENT_NUMBER, Access_group_direction, Access_group_in, Access_group_out, Acl_any_match, Acl_dest_any_match, Acl_dest_host_match, Acl_dest_network_match, Acl_extended_cmd, Acl_extended_cmds, Acl_extended_deny_cmd, Acl_extended_match, Acl_extended_match_dest, Acl_extended_permit_cmd, Acl_host_match, Acl_network_match, Acl_port_bgp, Acl_port_domain, Acl_port_ftp, Acl_port_http, Acl_port_https, Acl_port_isakmp, Acl_port_match, Acl_port_name, Acl_port_ntp, Acl_port_number, Acl_port_snmp, Acl_port_ssh, Acl_port_telnet, Acl_port_tftp, Acl_port_value, Acl_protocol, Acl_protocol_gre, Acl_protocol_icmp, Acl_protocol_ip, Acl_protocol_tcp, Acl_protocol_udp, Acl_standard_cmd, Acl_standard_cmds, Acl_standard_deny_cmd, Acl_standard_match, Acl_standard_permit_cmd, AlgorithmTypeOption, AlgorithmType_Options, BANNER_MESSAGE, BGP_AS_NUMBER, BGP_EBGP_MULTIHOP_NUMBER, Banner_cmd, Banner_cmd_option, Bgp_cmds, Bgp_neigbour_ebgp_multihop_option, Bgp_neighbor_cmd, Bgp_neighbour_Remote_as_option, Bgp_neighbour_options, Bgp_neighbour_update_source_option, Bgp_network_cmd, Bgp_router_id_cmd, Bgp_update_source_interface_type_fastethernet, Bgp_update_source_interface_type_gigabitethernet, Bgp_update_source_interface_types, COMMENT, COMMENTLINE, COMMON, CONSOLE_NUMBER, CarrierDelay_cmd, Configure_cmd, Configure_cmd_options, Configure_cmds, Crypto_cmd, Crypto_cmd_option, DESCRIPTION_INPUT, DOMAINNAME_INPUT, Description_cmd, Domainname_cmd, Duplex_cmd, Duplex_option, Enable_cmds, ExecTimeout_cmd, Exit_acl_extended, Exit_acl_standard, Exit_bgp, Exit_configure, Exit_interface_fastethernet, Exit_interface_gigabitethernet, Exit_interface_vlan, Exit_line_console, Exit_line_vty, Exit_ospf, Exit_rip, Generate_cmd, Generate_cmd_option, HOSTNAME_INPUT, Hostname_cmd, INTERFACE_CARRIER_DELAY_NUMBER, INTERFACE_NUMBER_INPUT, INTERFACE_SPEED_NUMBER, INTERFACE_VLAN_NUMBER, IP, IP_cmd, IP_cmd_interface, IP_cmd_option, Interface_cmd, Interface_fastethernet_cmds, Interface_gigabitethernet_cmds, Interface_type_fastethernet, Interface_type_gigabitethernet, Interface_type_vlan, Interface_types, Interface_vlan_cmds, Ip_Helper_cmd, Ip_access_list_cmd_option, Ip_access_list_option, Ip_cmd_option_access_group, Ip_cmd_option_address, Ip_cmd_option_nat, Ip_cmd_option_ospf, Ip_cmd_option_ospf_option_cost, Ip_cmd_option_ospf_option_priority, Ip_cmd_option_ospf_options, Ip_cmd_options, Ip_nat_cmd, Ip_nat_cmd_option, Ip_nat_inside_cmd, Ip_nat_inside_source_cmd, Ip_nat_inside_source_list_cmd, Ip_nat_inside_source_list_interface_cmd, Ip_nat_overload_cmd, KEYWORDS, Key_cmd, Key_cmd_option, Line_ExecTimeoutValue, Line_LoggingOption, Line_LoginOption, Line_cmd, Line_console_cmds, Line_type_console, Line_type_vty, Line_types, Line_vty_cmds, Logging_cmd, Login_cmd, MD5Option, MD5Option_cmd, MODULUS_INPUT, Modulus_cmd, NAT_INTERFACE_NUMBER_INPUT, Nat_direction, Nat_inside, Nat_interface_fastethernet, Nat_interface_gigabitethernet, Nat_interface_types, Nat_outside, No_banner_cmd, No_cmd, No_cmd_interface, No_cmd_interface_option, No_ip_cmd, No_ip_cmd_option_domain_lookup, No_ip_cmd_options, No_options, OSPF_AREA_NUMBER, OSPF_COST_NUMBER, OSPF_PASSIVE_INTERFACE_NUMBER, OSPF_PRIORITY_NUMBER, OSPF_PROCESS_NUMBER, Ospf_cmds, Ospf_default_information_cmd, Ospf_default_information_cmd_options, Ospf_interface_types, Ospf_network_cmd, Ospf_passive_interface_cmd, Ospf_passive_interface_type_fastethernet, Ospf_passive_interface_type_gigabitethernet, Ospf_priority_cmd, Ospf_redistribute_cmd, Ospf_redistribute_cmd_options, Ospf_router_id_cmd, PRIVILEGE_INPUT, PasswordOption, Ping_cmd, PrivilegeOption, RIP_PASSIVE_INTERFACE_NUMBER, RIP_VERSION_NUMBER, Rip_cmds, Rip_default_information_cmd, Rip_default_information_cmd_options, Rip_interface_types, Rip_network_cmd, Rip_no_cmd_options, Rip_no_cmds, Rip_passive_interface_cmd, Rip_passive_interface_type_fastethernet, Rip_passive_interface_type_gigabitethernet, Rip_redistribute_cmd, Rip_redistribute_cmd_options, Rip_version_cmd, Router_cmd, Router_cmd_option, Rsa_cmd, Rsa_cmd_option, SSHOptions, SSH_cmd, SUBNETMASK, Script, ScryptOption, ScryptOption_cmd, SecretOption, Sha256Option, Sha256Option_cmd, Show_cmd, Show_cmd_options, Show_interface_option, Show_run_option, Shutdown_cmd, Speed_cmd, Speed_cmd_fe, Stat, TransportInputList, TransportInput_cmd, TransportProto, Transport_cmd, Transport_cmd_option, UPDATE_SOURCE_INTERFACE_NUMBER_INPUT, USERNAME_INPUT, USERNAME_PASSWORD_INPUT, UsageKeys_Option, UsageKeys_cmd, Username_cmd, Username_cmd_option, VERSION_INPUT, VTY_NUMBER, WILDCARDMASK];
     }
     computeIsSubtype(subtype, supertype) {
         switch (subtype) {
+            case Access_group_in:
+            case Access_group_out: {
+                return this.isSubtype(Access_group_direction, supertype);
+            }
+            case Acl_any_match:
+            case Acl_host_match:
+            case Acl_network_match: {
+                return this.isSubtype(Acl_extended_match, supertype) || this.isSubtype(Acl_standard_match, supertype);
+            }
+            case Acl_dest_any_match:
+            case Acl_dest_host_match:
+            case Acl_dest_network_match: {
+                return this.isSubtype(Acl_extended_match_dest, supertype);
+            }
+            case Acl_extended_cmd:
+            case Acl_standard_cmd: {
+                return this.isSubtype(Ip_access_list_option, supertype);
+            }
+            case Acl_extended_cmds: {
+                return this.isSubtype(Acl_extended_cmd, supertype);
+            }
+            case Acl_port_bgp:
+            case Acl_port_domain:
+            case Acl_port_ftp:
+            case Acl_port_http:
+            case Acl_port_https:
+            case Acl_port_isakmp:
+            case Acl_port_ntp:
+            case Acl_port_snmp:
+            case Acl_port_ssh:
+            case Acl_port_telnet:
+            case Acl_port_tftp: {
+                return this.isSubtype(Acl_port_name, supertype);
+            }
+            case Acl_port_name:
+            case Acl_port_number: {
+                return this.isSubtype(Acl_port_value, supertype);
+            }
+            case Acl_protocol_gre:
+            case Acl_protocol_icmp:
+            case Acl_protocol_ip:
+            case Acl_protocol_tcp:
+            case Acl_protocol_udp: {
+                return this.isSubtype(Acl_protocol, supertype);
+            }
+            case Acl_standard_cmds: {
+                return this.isSubtype(Acl_standard_cmd, supertype);
+            }
             case AlgorithmTypeOption:
             case PasswordOption:
             case PrivilegeOption:
             case SecretOption: {
                 return this.isSubtype(Username_cmd_option, supertype);
             }
-            case Banner_cmd:
-            case Crypto_cmd:
-            case Hostname_cmd:
-            case Interface_cmd:
-            case IP_cmd:
-            case Line_cmd:
-            case No_cmd:
-            case Router_cmd:
-            case Username_cmd: {
-                return this.isSubtype(Configure_cmds, supertype);
-            }
-            case Bgp_cmd:
-            case Ospf_cmd:
-            case Rip_cmd: {
+            case Bgp_cmds:
+            case Ospf_cmds:
+            case Rip_cmds: {
                 return this.isSubtype(Router_cmd_option, supertype);
             }
             case Bgp_neigbour_ebgp_multihop_option:
             case Bgp_neighbour_Remote_as_option:
             case Bgp_neighbour_update_source_option: {
                 return this.isSubtype(Bgp_neighbour_options, supertype);
-            }
-            case Bgp_neighbor_cmd:
-            case Bgp_network_cmd:
-            case Bgp_router_id_cmd: {
-                return this.isSubtype(Bgp_cmds, supertype);
             }
             case Bgp_update_source_interface_type_fastethernet:
             case Bgp_update_source_interface_type_gigabitethernet: {
@@ -719,67 +1078,85 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
             case Bgp_update_source_interface_types: {
                 return this.isSubtype(Bgp_neighbour_update_source_option, supertype);
             }
-            case Bgp_update_source_Sub_Interface_number: {
-                return this.isSubtype(Bgp_update_source_interface_number, supertype);
-            }
-            case CarrierDelay_cmd:
-            case Speed_cmd_fe: {
-                return this.isSubtype(Interface_fastethernet_cmds, supertype);
-            }
             case COMMENTLINE: {
                 return this.isSubtype(COMMON, supertype);
-            }
-            case COMMON: {
-                return this.isSubtype(Bgp_cmds, supertype) || this.isSubtype(Configure_cmds, supertype) || this.isSubtype(Enable_cmds, supertype) || this.isSubtype(Interface_fastethernet_cmds, supertype) || this.isSubtype(Interface_gigabitethernet_cmds, supertype) || this.isSubtype(Interface_vlan_cmds, supertype) || this.isSubtype(Line_console_cmds, supertype) || this.isSubtype(Line_vty_cmds, supertype) || this.isSubtype(Ospf_cmds, supertype) || this.isSubtype(Rip_cmds, supertype);
-            }
-            case Configure_cmd:
-            case Ping_cmd:
-            case Show_cmd: {
-                return this.isSubtype(Enable_cmds, supertype);
             }
             case Configure_cmd_options: {
                 return this.isSubtype(Configure_cmd, supertype);
             }
-            case Description_cmd:
-            case IP_cmd_interface: {
-                return this.isSubtype(Interface_fastethernet_cmds, supertype) || this.isSubtype(Interface_gigabitethernet_cmds, supertype) || this.isSubtype(Interface_vlan_cmds, supertype);
+            case Configure_cmds: {
+                return this.isSubtype(Configure_cmd_options, supertype);
             }
             case Domainname_cmd:
+            case Ip_access_list_cmd_option:
             case SSH_cmd: {
                 return this.isSubtype(IP_cmd_option, supertype);
             }
-            case Duplex_cmd:
-            case Speed_cmd: {
+            case Exit_acl_extended: {
+                return this.isSubtype(Acl_extended_cmds, supertype);
+            }
+            case Exit_acl_standard: {
+                return this.isSubtype(Acl_standard_cmds, supertype);
+            }
+            case Exit_bgp: {
+                return this.isSubtype(Bgp_cmds, supertype);
+            }
+            case Exit_configure: {
+                return this.isSubtype(Configure_cmds, supertype);
+            }
+            case Exit_interface_fastethernet: {
+                return this.isSubtype(Interface_fastethernet_cmds, supertype);
+            }
+            case Exit_interface_gigabitethernet: {
                 return this.isSubtype(Interface_gigabitethernet_cmds, supertype);
             }
-            case ExecTimeout_cmd:
-            case Logging_cmd:
-            case Login_cmd: {
-                return this.isSubtype(Line_console_cmds, supertype) || this.isSubtype(Line_vty_cmds, supertype);
+            case Exit_interface_vlan: {
+                return this.isSubtype(Interface_vlan_cmds, supertype);
             }
-            case Exit: {
-                return this.isSubtype(Bgp_cmds, supertype) || this.isSubtype(Configure_cmds, supertype) || this.isSubtype(Interface_fastethernet_cmds, supertype) || this.isSubtype(Interface_gigabitethernet_cmds, supertype) || this.isSubtype(Interface_vlan_cmds, supertype) || this.isSubtype(Line_console_cmds, supertype) || this.isSubtype(Line_vty_cmds, supertype) || this.isSubtype(Ospf_cmds, supertype) || this.isSubtype(Rip_cmds, supertype);
+            case Exit_line_console: {
+                return this.isSubtype(Line_console_cmds, supertype);
+            }
+            case Exit_line_vty: {
+                return this.isSubtype(Line_vty_cmds, supertype);
+            }
+            case Exit_ospf: {
+                return this.isSubtype(Ospf_cmds, supertype);
+            }
+            case Exit_rip: {
+                return this.isSubtype(Rip_cmds, supertype);
             }
             case Generate_cmd: {
                 return this.isSubtype(Key_cmd_option, supertype);
+            }
+            case Interface_fastethernet_cmds: {
+                return this.isSubtype(Interface_type_fastethernet, supertype);
+            }
+            case Interface_gigabitethernet_cmds: {
+                return this.isSubtype(Interface_type_gigabitethernet, supertype);
             }
             case Interface_type_fastethernet:
             case Interface_type_gigabitethernet:
             case Interface_type_vlan: {
                 return this.isSubtype(Interface_types, supertype);
             }
+            case Interface_vlan_cmds: {
+                return this.isSubtype(Interface_type_vlan, supertype);
+            }
+            case Ip_cmd_option_access_group:
             case Ip_cmd_option_address:
+            case Ip_cmd_option_nat:
             case Ip_cmd_option_ospf: {
                 return this.isSubtype(Ip_cmd_options, supertype);
             }
-            case Ip_Helper_cmd: {
-                return this.isSubtype(Interface_vlan_cmds, supertype);
+            case Ip_cmd_option_ospf_option_cost:
+            case Ip_cmd_option_ospf_option_priority: {
+                return this.isSubtype(Ip_cmd_option_ospf_options, supertype);
             }
             case Key_cmd: {
                 return this.isSubtype(Crypto_cmd_option, supertype);
             }
-            case Line_ExecTimeoutValue: {
-                return this.isSubtype(ExecTimeout_cmd, supertype);
+            case Line_console_cmds: {
+                return this.isSubtype(Line_type_console, supertype);
             }
             case Line_LoggingOption: {
                 return this.isSubtype(Logging_cmd, supertype);
@@ -791,6 +1168,9 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
             case Line_type_vty: {
                 return this.isSubtype(Line_types, supertype);
             }
+            case Line_vty_cmds: {
+                return this.isSubtype(Line_type_vty, supertype);
+            }
             case MD5Option:
             case ScryptOption:
             case Sha256Option: {
@@ -799,39 +1179,24 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
             case Modulus_cmd: {
                 return this.isSubtype(UsageKeys_Option, supertype);
             }
+            case Nat_inside:
+            case Nat_outside: {
+                return this.isSubtype(Nat_direction, supertype);
+            }
+            case Nat_interface_fastethernet:
+            case Nat_interface_gigabitethernet: {
+                return this.isSubtype(Nat_interface_types, supertype);
+            }
             case No_banner_cmd:
             case No_ip_cmd: {
                 return this.isSubtype(No_options, supertype);
             }
-            case No_cmd_interface:
-            case Shutdown_cmd: {
-                return this.isSubtype(Interface_fastethernet_cmds, supertype) || this.isSubtype(Interface_gigabitethernet_cmds, supertype);
-            }
             case No_ip_cmd_option_domain_lookup: {
                 return this.isSubtype(No_ip_cmd_options, supertype);
-            }
-            case Ospf_default_information_cmd:
-            case Ospf_network_cmd:
-            case Ospf_passive_interface_cmd:
-            case Ospf_priority_cmd:
-            case Ospf_redistribute_cmd:
-            case Ospf_router_id_cmd: {
-                return this.isSubtype(Ospf_cmds, supertype);
             }
             case Ospf_passive_interface_type_fastethernet:
             case Ospf_passive_interface_type_gigabitethernet: {
                 return this.isSubtype(Ospf_interface_types, supertype);
-            }
-            case Ospf_passive_Sub_Interface_number: {
-                return this.isSubtype(Ospf_passive_interface_number, supertype);
-            }
-            case Rip_default_information_cmd:
-            case Rip_network_cmd:
-            case Rip_no_cmds:
-            case Rip_passive_interface_cmd:
-            case Rip_redistribute_cmd:
-            case Rip_version_cmd: {
-                return this.isSubtype(Rip_cmds, supertype);
             }
             case Rip_passive_interface_type_fastethernet:
             case Rip_passive_interface_type_gigabitethernet: {
@@ -840,11 +1205,9 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
             case Rsa_cmd: {
                 return this.isSubtype(Generate_cmd_option, supertype);
             }
-            case Sub_Interface_number: {
-                return this.isSubtype(Interface_number, supertype) || this.isSubtype(Rip_passive_interface_number, supertype);
-            }
-            case Transport_cmd: {
-                return this.isSubtype(Line_vty_cmds, supertype);
+            case Show_interface_option:
+            case Show_run_option: {
+                return this.isSubtype(Show_cmd_options, supertype);
             }
             case Transport_cmd_option: {
                 return this.isSubtype(Transport_cmd, supertype);
@@ -870,6 +1233,311 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
     }
     getTypeMetaData(type) {
         switch (type) {
+            case Access_group_in: {
+                return {
+                    name: Access_group_in,
+                    properties: [
+                        { name: 'direction' }
+                    ]
+                };
+            }
+            case Access_group_out: {
+                return {
+                    name: Access_group_out,
+                    properties: [
+                        { name: 'direction' }
+                    ]
+                };
+            }
+            case Acl_any_match: {
+                return {
+                    name: Acl_any_match,
+                    properties: [
+                        { name: 'option' }
+                    ]
+                };
+            }
+            case Acl_dest_any_match: {
+                return {
+                    name: Acl_dest_any_match,
+                    properties: [
+                        { name: 'option' },
+                        { name: 'port' }
+                    ]
+                };
+            }
+            case Acl_dest_host_match: {
+                return {
+                    name: Acl_dest_host_match,
+                    properties: [
+                        { name: 'ip' },
+                        { name: 'port' }
+                    ]
+                };
+            }
+            case Acl_dest_network_match: {
+                return {
+                    name: Acl_dest_network_match,
+                    properties: [
+                        { name: 'ip' },
+                        { name: 'mask' },
+                        { name: 'port' }
+                    ]
+                };
+            }
+            case Acl_extended_cmd: {
+                return {
+                    name: Acl_extended_cmd,
+                    properties: [
+                        { name: 'comment' },
+                        { name: 'name' }
+                    ]
+                };
+            }
+            case Acl_extended_deny_cmd: {
+                return {
+                    name: Acl_extended_deny_cmd,
+                    properties: [
+                        { name: 'comment' },
+                        { name: 'destination' },
+                        { name: 'protocol' },
+                        { name: 'sequence' },
+                        { name: 'source' }
+                    ]
+                };
+            }
+            case Acl_extended_permit_cmd: {
+                return {
+                    name: Acl_extended_permit_cmd,
+                    properties: [
+                        { name: 'comment' },
+                        { name: 'destination' },
+                        { name: 'protocol' },
+                        { name: 'sequence' },
+                        { name: 'source' }
+                    ]
+                };
+            }
+            case Acl_host_match: {
+                return {
+                    name: Acl_host_match,
+                    properties: [
+                        { name: 'ip' }
+                    ]
+                };
+            }
+            case ACL_NAME: {
+                return {
+                    name: ACL_NAME,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case Acl_network_match: {
+                return {
+                    name: Acl_network_match,
+                    properties: [
+                        { name: 'ip' },
+                        { name: 'mask' }
+                    ]
+                };
+            }
+            case ACL_NUMBER: {
+                return {
+                    name: ACL_NUMBER,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case Acl_port_bgp: {
+                return {
+                    name: Acl_port_bgp,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case Acl_port_domain: {
+                return {
+                    name: Acl_port_domain,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case Acl_port_ftp: {
+                return {
+                    name: Acl_port_ftp,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case Acl_port_http: {
+                return {
+                    name: Acl_port_http,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case Acl_port_https: {
+                return {
+                    name: Acl_port_https,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case Acl_port_isakmp: {
+                return {
+                    name: Acl_port_isakmp,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case Acl_port_match: {
+                return {
+                    name: Acl_port_match,
+                    properties: [
+                        { name: 'port' }
+                    ]
+                };
+            }
+            case Acl_port_ntp: {
+                return {
+                    name: Acl_port_ntp,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case Acl_port_number: {
+                return {
+                    name: Acl_port_number,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case ACL_PORT_NUMBER: {
+                return {
+                    name: ACL_PORT_NUMBER,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case Acl_port_snmp: {
+                return {
+                    name: Acl_port_snmp,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case Acl_port_ssh: {
+                return {
+                    name: Acl_port_ssh,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case Acl_port_telnet: {
+                return {
+                    name: Acl_port_telnet,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case Acl_port_tftp: {
+                return {
+                    name: Acl_port_tftp,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case Acl_protocol_gre: {
+                return {
+                    name: Acl_protocol_gre,
+                    properties: [
+                        { name: 'protocol' }
+                    ]
+                };
+            }
+            case Acl_protocol_icmp: {
+                return {
+                    name: Acl_protocol_icmp,
+                    properties: [
+                        { name: 'protocol' }
+                    ]
+                };
+            }
+            case Acl_protocol_ip: {
+                return {
+                    name: Acl_protocol_ip,
+                    properties: [
+                        { name: 'protocol' }
+                    ]
+                };
+            }
+            case Acl_protocol_tcp: {
+                return {
+                    name: Acl_protocol_tcp,
+                    properties: [
+                        { name: 'protocol' }
+                    ]
+                };
+            }
+            case Acl_protocol_udp: {
+                return {
+                    name: Acl_protocol_udp,
+                    properties: [
+                        { name: 'protocol' }
+                    ]
+                };
+            }
+            case Acl_standard_cmd: {
+                return {
+                    name: Acl_standard_cmd,
+                    properties: [
+                        { name: 'comment' },
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case Acl_standard_deny_cmd: {
+                return {
+                    name: Acl_standard_deny_cmd,
+                    properties: [
+                        { name: 'comment' },
+                        { name: 'option' }
+                    ]
+                };
+            }
+            case Acl_standard_permit_cmd: {
+                return {
+                    name: Acl_standard_permit_cmd,
+                    properties: [
+                        { name: 'comment' },
+                        { name: 'option' }
+                    ]
+                };
+            }
+            case ACL_STATEMENT_NUMBER: {
+                return {
+                    name: ACL_STATEMENT_NUMBER,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
             case AlgorithmTypeOption: {
                 return {
                     name: AlgorithmTypeOption,
@@ -904,13 +1572,19 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     ]
                 };
             }
-            case Bgp_cmd: {
+            case BGP_AS_NUMBER: {
                 return {
-                    name: Bgp_cmd,
+                    name: BGP_AS_NUMBER,
                     properties: [
-                        { name: 'asn' },
-                        { name: 'comment' },
-                        { name: 'lines', defaultValue: [] }
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case BGP_EBGP_MULTIHOP_NUMBER: {
+                return {
+                    name: BGP_EBGP_MULTIHOP_NUMBER,
+                    properties: [
+                        { name: 'value' }
                     ]
                 };
             }
@@ -959,19 +1633,10 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     ]
                 };
             }
-            case Bgp_update_source_interface_number: {
-                return {
-                    name: Bgp_update_source_interface_number,
-                    properties: [
-                        { name: 'number' }
-                    ]
-                };
-            }
             case Bgp_update_source_interface_type_fastethernet: {
                 return {
                     name: Bgp_update_source_interface_type_fastethernet,
                     properties: [
-                        { name: 'comment' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -981,7 +1646,6 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Bgp_update_source_interface_type_gigabitethernet,
                     properties: [
-                        { name: 'comment' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -1000,8 +1664,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: COMMENT,
                     properties: [
-                        { name: 'delim' },
-                        { name: 'text', defaultValue: [] }
+                        { name: 'value' }
                     ]
                 };
             }
@@ -1009,8 +1672,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: COMMENTLINE,
                     properties: [
-                        { name: 'delim' },
-                        { name: 'text', defaultValue: [] }
+                        { name: 'value' }
                     ]
                 };
             }
@@ -1018,8 +1680,15 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Configure_cmd_options,
                     properties: [
-                        { name: 'comment' },
-                        { name: 'lines', defaultValue: [] }
+                        { name: 'comment' }
+                    ]
+                };
+            }
+            case CONSOLE_NUMBER: {
+                return {
+                    name: CONSOLE_NUMBER,
+                    properties: [
+                        { name: 'value' }
                     ]
                 };
             }
@@ -1038,6 +1707,14 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     properties: [
                         { name: 'comment' },
                         { name: 'value' }
+                    ]
+                };
+            }
+            case DESCRIPTION_INPUT: {
+                return {
+                    name: DESCRIPTION_INPUT,
+                    properties: [
+                        { name: 'value', defaultValue: [] }
                     ]
                 };
             }
@@ -1075,13 +1752,19 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     ]
                 };
             }
-            case Exit: {
+            case Enable_cmds: {
                 return {
-                    name: Exit,
+                    name: Enable_cmds,
                     properties: [
-                        { name: 'command' },
-                        { name: 'comment' },
                         { name: 'lines', defaultValue: [] }
+                    ]
+                };
+            }
+            case ExecTimeout_cmd: {
+                return {
+                    name: ExecTimeout_cmd,
+                    properties: [
+                        { name: 'exectimeoutvalue' }
                     ]
                 };
             }
@@ -1110,6 +1793,14 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     ]
                 };
             }
+            case INTERFACE_CARRIER_DELAY_NUMBER: {
+                return {
+                    name: INTERFACE_CARRIER_DELAY_NUMBER,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
             case Interface_cmd: {
                 return {
                     name: Interface_cmd,
@@ -1118,11 +1809,19 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     ]
                 };
             }
-            case Interface_number: {
+            case INTERFACE_NUMBER_INPUT: {
                 return {
-                    name: Interface_number,
+                    name: INTERFACE_NUMBER_INPUT,
                     properties: [
-                        { name: 'number' }
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case INTERFACE_SPEED_NUMBER: {
+                return {
+                    name: INTERFACE_SPEED_NUMBER,
+                    properties: [
+                        { name: 'value' }
                     ]
                 };
             }
@@ -1131,7 +1830,6 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Interface_type_fastethernet,
                     properties: [
                         { name: 'comment' },
-                        { name: 'lines', defaultValue: [] },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -1142,7 +1840,6 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Interface_type_gigabitethernet,
                     properties: [
                         { name: 'comment' },
-                        { name: 'lines', defaultValue: [] },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -1153,9 +1850,16 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Interface_type_vlan,
                     properties: [
                         { name: 'comment' },
-                        { name: 'lines', defaultValue: [] },
                         { name: 'number' },
                         { name: 'type' }
+                    ]
+                };
+            }
+            case INTERFACE_VLAN_NUMBER: {
+                return {
+                    name: INTERFACE_VLAN_NUMBER,
+                    properties: [
+                        { name: 'value' }
                     ]
                 };
             }
@@ -1164,6 +1868,14 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: IP,
                     properties: [
                         { name: 'value' }
+                    ]
+                };
+            }
+            case Ip_access_list_cmd_option: {
+                return {
+                    name: Ip_access_list_cmd_option,
+                    properties: [
+                        { name: 'option' }
                     ]
                 };
             }
@@ -1183,6 +1895,16 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     ]
                 };
             }
+            case Ip_cmd_option_access_group: {
+                return {
+                    name: Ip_cmd_option_access_group,
+                    properties: [
+                        { name: 'comment' },
+                        { name: 'direction' },
+                        { name: 'name' }
+                    ]
+                };
+            }
             case Ip_cmd_option_address: {
                 return {
                     name: Ip_cmd_option_address,
@@ -1190,6 +1912,15 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                         { name: 'comment' },
                         { name: 'ip' },
                         { name: 'mask' }
+                    ]
+                };
+            }
+            case Ip_cmd_option_nat: {
+                return {
+                    name: Ip_cmd_option_nat,
+                    properties: [
+                        { name: 'comment' },
+                        { name: 'direction' }
                     ]
                 };
             }
@@ -1202,12 +1933,86 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     ]
                 };
             }
+            case Ip_cmd_option_ospf_option_cost: {
+                return {
+                    name: Ip_cmd_option_ospf_option_cost,
+                    properties: [
+                        { name: 'cost' }
+                    ]
+                };
+            }
+            case Ip_cmd_option_ospf_option_priority: {
+                return {
+                    name: Ip_cmd_option_ospf_option_priority,
+                    properties: [
+                        { name: 'priority' }
+                    ]
+                };
+            }
             case Ip_Helper_cmd: {
                 return {
                     name: Ip_Helper_cmd,
                     properties: [
                         { name: 'comment' },
                         { name: 'value' }
+                    ]
+                };
+            }
+            case Ip_nat_cmd: {
+                return {
+                    name: Ip_nat_cmd,
+                    properties: [
+                        { name: 'option' }
+                    ]
+                };
+            }
+            case Ip_nat_cmd_option: {
+                return {
+                    name: Ip_nat_cmd_option,
+                    properties: [
+                        { name: 'option' }
+                    ]
+                };
+            }
+            case Ip_nat_inside_cmd: {
+                return {
+                    name: Ip_nat_inside_cmd,
+                    properties: [
+                        { name: 'option' }
+                    ]
+                };
+            }
+            case Ip_nat_inside_source_cmd: {
+                return {
+                    name: Ip_nat_inside_source_cmd,
+                    properties: [
+                        { name: 'option' }
+                    ]
+                };
+            }
+            case Ip_nat_inside_source_list_cmd: {
+                return {
+                    name: Ip_nat_inside_source_list_cmd,
+                    properties: [
+                        { name: 'listName' },
+                        { name: 'option' }
+                    ]
+                };
+            }
+            case Ip_nat_inside_source_list_interface_cmd: {
+                return {
+                    name: Ip_nat_inside_source_list_interface_cmd,
+                    properties: [
+                        { name: 'interface' },
+                        { name: 'option' }
+                    ]
+                };
+            }
+            case Ip_nat_overload_cmd: {
+                return {
+                    name: Ip_nat_overload_cmd,
+                    properties: [
+                        { name: 'comment' }
                     ]
                 };
             }
@@ -1269,7 +2074,6 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Line_type_console,
                     properties: [
                         { name: 'comment' },
-                        { name: 'lines', defaultValue: [] },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -1281,7 +2085,6 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     properties: [
                         { name: 'comment' },
                         { name: 'end' },
-                        { name: 'lines', defaultValue: [] },
                         { name: 'start' },
                         { name: 'type' }
                     ]
@@ -1316,6 +2119,46 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: MODULUS_INPUT,
                     properties: [
                         { name: 'value' }
+                    ]
+                };
+            }
+            case Nat_inside: {
+                return {
+                    name: Nat_inside,
+                    properties: [
+                        { name: 'direction' }
+                    ]
+                };
+            }
+            case Nat_interface_fastethernet: {
+                return {
+                    name: Nat_interface_fastethernet,
+                    properties: [
+                        { name: 'types' }
+                    ]
+                };
+            }
+            case Nat_interface_gigabitethernet: {
+                return {
+                    name: Nat_interface_gigabitethernet,
+                    properties: [
+                        { name: 'types' }
+                    ]
+                };
+            }
+            case NAT_INTERFACE_NUMBER_INPUT: {
+                return {
+                    name: NAT_INTERFACE_NUMBER_INPUT,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case Nat_outside: {
+                return {
+                    name: Nat_outside,
+                    properties: [
+                        { name: 'direction' }
                     ]
                 };
             }
@@ -1376,13 +2219,11 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     ]
                 };
             }
-            case Ospf_cmd: {
+            case OSPF_COST_NUMBER: {
                 return {
-                    name: Ospf_cmd,
+                    name: OSPF_COST_NUMBER,
                     properties: [
-                        { name: 'comment' },
-                        { name: 'lines', defaultValue: [] },
-                        { name: 'process' }
+                        { name: 'value' }
                     ]
                 };
             }
@@ -1418,15 +2259,16 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Ospf_passive_interface_cmd,
                     properties: [
+                        { name: 'comment' },
                         { name: 'types' }
                     ]
                 };
             }
-            case Ospf_passive_interface_number: {
+            case OSPF_PASSIVE_INTERFACE_NUMBER: {
                 return {
-                    name: Ospf_passive_interface_number,
+                    name: OSPF_PASSIVE_INTERFACE_NUMBER,
                     properties: [
-                        { name: 'number' }
+                        { name: 'value' }
                     ]
                 };
             }
@@ -1434,7 +2276,6 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Ospf_passive_interface_type_fastethernet,
                     properties: [
-                        { name: 'comment' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -1444,7 +2285,6 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Ospf_passive_interface_type_gigabitethernet,
                     properties: [
-                        { name: 'comment' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -1455,6 +2295,14 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Ospf_priority_cmd,
                     properties: [
                         { name: 'comment' },
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case OSPF_PRIORITY_NUMBER: {
+                return {
+                    name: OSPF_PRIORITY_NUMBER,
+                    properties: [
                         { name: 'value' }
                     ]
                 };
@@ -1526,15 +2374,6 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     ]
                 };
             }
-            case Rip_cmd: {
-                return {
-                    name: Rip_cmd,
-                    properties: [
-                        { name: 'comment' },
-                        { name: 'lines', defaultValue: [] }
-                    ]
-                };
-            }
             case Rip_default_information_cmd: {
                 return {
                     name: Rip_default_information_cmd,
@@ -1586,11 +2425,11 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     ]
                 };
             }
-            case Rip_passive_interface_number: {
+            case RIP_PASSIVE_INTERFACE_NUMBER: {
                 return {
-                    name: Rip_passive_interface_number,
+                    name: RIP_PASSIVE_INTERFACE_NUMBER,
                     properties: [
-                        { name: 'number' }
+                        { name: 'value' }
                     ]
                 };
             }
@@ -1611,14 +2450,6 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                         { name: 'comment' },
                         { name: 'number' },
                         { name: 'type' }
-                    ]
-                };
-            }
-            case Rip_passive_Sub_Interface_number: {
-                return {
-                    name: Rip_passive_Sub_Interface_number,
-                    properties: [
-                        { name: 'sub' }
                     ]
                 };
             }
@@ -1647,11 +2478,29 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     ]
                 };
             }
+            case RIP_VERSION_NUMBER: {
+                return {
+                    name: RIP_VERSION_NUMBER,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
             case Router_cmd: {
                 return {
                     name: Router_cmd,
                     properties: [
                         { name: 'option' }
+                    ]
+                };
+            }
+            case Router_cmd_option: {
+                return {
+                    name: Router_cmd_option,
+                    properties: [
+                        { name: 'asn' },
+                        { name: 'comment' },
+                        { name: 'process' }
                     ]
                 };
             }
@@ -1719,9 +2568,18 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     ]
                 };
             }
-            case Show_cmd_options: {
+            case Show_interface_option: {
                 return {
-                    name: Show_cmd_options,
+                    name: Show_interface_option,
+                    properties: [
+                        { name: 'comment' },
+                        { name: 'option' }
+                    ]
+                };
+            }
+            case Show_run_option: {
+                return {
+                    name: Show_run_option,
                     properties: [
                         { name: 'comment' },
                         { name: 'option' }
@@ -1812,6 +2670,14 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     ]
                 };
             }
+            case UPDATE_SOURCE_INTERFACE_NUMBER_INPUT: {
+                return {
+                    name: UPDATE_SOURCE_INTERFACE_NUMBER_INPUT,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
             case UsageKeys_cmd: {
                 return {
                     name: UsageKeys_cmd,
@@ -1854,6 +2720,14 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     ]
                 };
             }
+            case VTY_NUMBER: {
+                return {
+                    name: VTY_NUMBER,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
             case WILDCARDMASK: {
                 return {
                     name: WILDCARDMASK,
@@ -1862,30 +2736,261 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     ]
                 };
             }
-            case Bgp_update_source_Sub_Interface_number: {
+            case Acl_extended_cmds: {
                 return {
-                    name: Bgp_update_source_Sub_Interface_number,
+                    name: Acl_extended_cmds,
                     properties: [
-                        { name: 'number' },
-                        { name: 'sub' }
+                        { name: 'comment' },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'name' }
                     ]
                 };
             }
-            case Sub_Interface_number: {
+            case Acl_standard_cmds: {
                 return {
-                    name: Sub_Interface_number,
+                    name: Acl_standard_cmds,
                     properties: [
-                        { name: 'number' },
-                        { name: 'sub' }
+                        { name: 'comment' },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'value' }
                     ]
                 };
             }
-            case Ospf_passive_Sub_Interface_number: {
+            case Configure_cmds: {
                 return {
-                    name: Ospf_passive_Sub_Interface_number,
+                    name: Configure_cmds,
                     properties: [
+                        { name: 'comment' },
+                        { name: 'lines', defaultValue: [] }
+                    ]
+                };
+            }
+            case Interface_fastethernet_cmds: {
+                return {
+                    name: Interface_fastethernet_cmds,
+                    properties: [
+                        { name: 'comment' },
+                        { name: 'lines', defaultValue: [] },
                         { name: 'number' },
-                        { name: 'sub' }
+                        { name: 'type' }
+                    ]
+                };
+            }
+            case Interface_gigabitethernet_cmds: {
+                return {
+                    name: Interface_gigabitethernet_cmds,
+                    properties: [
+                        { name: 'comment' },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'number' },
+                        { name: 'type' }
+                    ]
+                };
+            }
+            case Interface_vlan_cmds: {
+                return {
+                    name: Interface_vlan_cmds,
+                    properties: [
+                        { name: 'comment' },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'number' },
+                        { name: 'type' }
+                    ]
+                };
+            }
+            case Line_console_cmds: {
+                return {
+                    name: Line_console_cmds,
+                    properties: [
+                        { name: 'comment' },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'number' },
+                        { name: 'type' }
+                    ]
+                };
+            }
+            case Line_vty_cmds: {
+                return {
+                    name: Line_vty_cmds,
+                    properties: [
+                        { name: 'comment' },
+                        { name: 'end' },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'start' },
+                        { name: 'type' }
+                    ]
+                };
+            }
+            case Bgp_cmds: {
+                return {
+                    name: Bgp_cmds,
+                    properties: [
+                        { name: 'asn' },
+                        { name: 'comment' },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'process' }
+                    ]
+                };
+            }
+            case Ospf_cmds: {
+                return {
+                    name: Ospf_cmds,
+                    properties: [
+                        { name: 'asn' },
+                        { name: 'comment' },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'process' }
+                    ]
+                };
+            }
+            case Rip_cmds: {
+                return {
+                    name: Rip_cmds,
+                    properties: [
+                        { name: 'asn' },
+                        { name: 'comment' },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'process' }
+                    ]
+                };
+            }
+            case Exit_acl_extended: {
+                return {
+                    name: Exit_acl_extended,
+                    properties: [
+                        { name: 'command' },
+                        { name: 'comment' },
+                        { name: 'continuation', defaultValue: [] },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'name' }
+                    ]
+                };
+            }
+            case Exit_acl_standard: {
+                return {
+                    name: Exit_acl_standard,
+                    properties: [
+                        { name: 'command' },
+                        { name: 'comment' },
+                        { name: 'continuation', defaultValue: [] },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'value' }
+                    ]
+                };
+            }
+            case Exit_configure: {
+                return {
+                    name: Exit_configure,
+                    properties: [
+                        { name: 'command' },
+                        { name: 'comment' },
+                        { name: 'continuation', defaultValue: [] },
+                        { name: 'lines', defaultValue: [] }
+                    ]
+                };
+            }
+            case Exit_interface_fastethernet: {
+                return {
+                    name: Exit_interface_fastethernet,
+                    properties: [
+                        { name: 'command' },
+                        { name: 'comment' },
+                        { name: 'continuation', defaultValue: [] },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'number' },
+                        { name: 'type' }
+                    ]
+                };
+            }
+            case Exit_interface_gigabitethernet: {
+                return {
+                    name: Exit_interface_gigabitethernet,
+                    properties: [
+                        { name: 'command' },
+                        { name: 'comment' },
+                        { name: 'continuation', defaultValue: [] },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'number' },
+                        { name: 'type' }
+                    ]
+                };
+            }
+            case Exit_interface_vlan: {
+                return {
+                    name: Exit_interface_vlan,
+                    properties: [
+                        { name: 'command' },
+                        { name: 'comment' },
+                        { name: 'continuation', defaultValue: [] },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'number' },
+                        { name: 'type' }
+                    ]
+                };
+            }
+            case Exit_line_console: {
+                return {
+                    name: Exit_line_console,
+                    properties: [
+                        { name: 'command' },
+                        { name: 'comment' },
+                        { name: 'continuation', defaultValue: [] },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'number' },
+                        { name: 'type' }
+                    ]
+                };
+            }
+            case Exit_line_vty: {
+                return {
+                    name: Exit_line_vty,
+                    properties: [
+                        { name: 'command' },
+                        { name: 'comment' },
+                        { name: 'continuation', defaultValue: [] },
+                        { name: 'end' },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'start' },
+                        { name: 'type' }
+                    ]
+                };
+            }
+            case Exit_bgp: {
+                return {
+                    name: Exit_bgp,
+                    properties: [
+                        { name: 'asn' },
+                        { name: 'command' },
+                        { name: 'comment' },
+                        { name: 'continuation', defaultValue: [] },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'process' }
+                    ]
+                };
+            }
+            case Exit_ospf: {
+                return {
+                    name: Exit_ospf,
+                    properties: [
+                        { name: 'asn' },
+                        { name: 'command' },
+                        { name: 'comment' },
+                        { name: 'continuation', defaultValue: [] },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'process' }
+                    ]
+                };
+            }
+            case Exit_rip: {
+                return {
+                    name: Exit_rip,
+                    properties: [
+                        { name: 'asn' },
+                        { name: 'command' },
+                        { name: 'comment' },
+                        { name: 'continuation', defaultValue: [] },
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'process' }
                     ]
                 };
             }

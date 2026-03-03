@@ -1,4 +1,4 @@
-import { isIP_cmd_interface, isIp_cmd_option_address, isLine_ExecTimeoutValue, isExit, isKEYWORDS, } from './generated/ast.js';
+import { isIP_cmd_interface, isIp_cmd_option_address, isExecTimeout_cmd, isLine_console_cmds, isExit_line_console, isExit_line_vty, isKEYWORDS, isLine_vty_cmds, } from './generated/ast.js';
 import { AstUtils } from 'langium';
 import * as ipaddr from "ipaddr.js";
 /**
@@ -15,6 +15,12 @@ export function registerValidationChecks(services) {
         Stat: validator.check_Stat,
         Generate_cmd: validator.checkGenerate_cmd,
         Line_types: validator.checkLine_types,
+        INTERFACE_NUMBER_INPUT: validator.checkINTERFACE_NUMBER,
+        UPDATE_SOURCE_INTERFACE_NUMBER_INPUT: validator.checkUPDATE_SOURCE_INTERFACE_NUMBER,
+        NAT_INTERFACE_NUMBER_INPUT: validator.checkNAT_INTERFACE_NUMBER,
+        OSPF_COST_NUMBER: validator.checkOSPF_COST_NUMBER,
+        OSPF_PRIORITY_NUMBER: validator.checkOSPF_PRIORITY_NUMBER,
+        OSPF_PASSIVE_INTERFACE_NUMBER: validator.checkOSPF_PASSIVE_INTERFACE_NUMBER,
     };
     registry.register(checks, validator);
 }
@@ -144,6 +150,68 @@ export class CiscoIosValidator {
             accept("error", `Delimiter (${delim1}) can not be inside MESSAGE!`, { node: BANNER_MESSAGE });
         }
     }
+    checkINTERFACE_NUMBER(interface_number, accept) {
+        const valid = /^[0-9]+\/[0-9]+(\.[0-9]+)?$/.test(interface_number.value);
+        if (!valid) {
+            accept("error", "This is not a valid Interface Number!", { node: interface_number, property: 'value' });
+        }
+    }
+    checkUPDATE_SOURCE_INTERFACE_NUMBER(node, accept) {
+        const validFormat = /^[0-9]+\/[0-9]+$/.test(node.value);
+        if (!validFormat) {
+            if (/^[0-9]+\/[0-9]+\.[0-9]+$/.test(node.value)) {
+                accept("error", "BGP update-source does not allow Subinterfaces!", { node, property: 'value' });
+            }
+            else {
+                accept("error", "This is not a valid Interface Number!", { node, property: 'value' });
+            }
+        }
+    }
+    checkNAT_INTERFACE_NUMBER(node, accept) {
+        const validFormat = /^[0-9]+\/[0-9]+(\.[0-9]+)?$/.test(node.value);
+        if (!validFormat) {
+            accept("error", "This is not a valid NAT Interface Number!", { node, property: 'value' });
+        }
+    }
+    /**
+     * @description
+     * checks if OSPF cost is in valid range (1-65535)
+     *
+     * @param node OSPF_COST_NUMBER from ip ospf cost
+     * @param accept the acceptor
+     */
+    checkOSPF_COST_NUMBER(node, accept) {
+        const num = parseInt(node.value, 10);
+        if (Number.isNaN(num) || num < 1 || num > 65535) {
+            accept("error", "OSPF cost must be between 1 and 65535!", { node, property: 'value' });
+        }
+    }
+    /**
+     * @description
+     * checks if OSPF priority is in valid range (0-255)
+     *
+     * @param node OSPF_PRIORITY_NUMBER from ip ospf priority
+     * @param accept the acceptor
+     */
+    checkOSPF_PRIORITY_NUMBER(node, accept) {
+        const num = parseInt(node.value, 10);
+        if (Number.isNaN(num) || num < 0 || num > 255) {
+            accept("error", "OSPF priority must be between 0 and 255!", { node, property: 'value' });
+        }
+    }
+    /**
+     * @description
+     * checks if OSPF passive-interface number is valid (X/Y or X/Y.Vlan)
+     *
+     * @param node OSPF_PASSIVE_INTERFACE_NUMBER from passive-interface gigabitethernet|fastethernet
+     * @param accept the acceptor
+     */
+    checkOSPF_PASSIVE_INTERFACE_NUMBER(node, accept) {
+        const valid = /^[0-9]+\/[0-9]+(\.[0-9]+)?$/.test(node.value);
+        if (!valid) {
+            accept("error", "This is not a valid OSPF passive-interface number (use X/Y or X/Y.Vlan)!", { node, property: 'value' });
+        }
+    }
     /**
      * @description
      * checks if a domain-name and hostname is set,
@@ -153,21 +221,17 @@ export class CiscoIosValidator {
      * @param accept the acceptor
      */
     checkGenerate_cmd(generate, accept) {
-        // Get root node and collect relevant commands in script order
         const root = AstUtils.findRootNode(generate);
         const allCommands = Array.from(AstUtils.streamAllContents(root));
-        // indexes of commands 
         const generateIndex = allCommands.indexOf(generate);
         const hostnameIndex = allCommands.findIndex(e => e.$type === "Hostname_cmd");
         const domainIndex = allCommands.findIndex(e => e.$type === "Domainname_cmd");
-        // hostname must exist and come before generate
         if (hostnameIndex === -1) {
             accept("error", `Set a hostname before generating keys!`, { node: generate.$container.$container });
         }
         else if (hostnameIndex > generateIndex) {
             accept("error", `A hostname must be defined before generating keys!`, { node: generate.$container.$container });
         }
-        // domain-name must exist and come before generate
         if (domainIndex === -1) {
             accept("error", `Set a domain-name before generating keys!`, { node: generate.$container.$container });
         }
@@ -184,15 +248,26 @@ export class CiscoIosValidator {
      */
     checkLine_types(linecmd, accept) {
         let cmds = [];
-        for (let cmd of linecmd.lines) {
-            if (!isExit(cmd)) {
-                cmds.push(cmd);
-            }
-            else {
-                break;
+        if (isLine_console_cmds(linecmd)) {
+            for (const cmd of linecmd.lines) {
+                if (!isExit_line_console(cmd))
+                    cmds.push(cmd);
+                else
+                    break;
             }
         }
-        if (cmds.findIndex(e => isLine_ExecTimeoutValue(e)) < 0) {
+        else if (isLine_vty_cmds(linecmd)) {
+            for (const cmd of linecmd.lines) {
+                if (!isExit_line_vty(cmd))
+                    cmds.push(cmd);
+                else
+                    break;
+            }
+        }
+        else {
+            return;
+        }
+        if (cmds.findIndex(e => isExecTimeout_cmd(e)) < 0) {
             accept("info", `Line mode has no exec-timeout command!`, { node: linecmd.$container, property: "command" });
         }
     }

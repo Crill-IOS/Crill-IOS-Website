@@ -6,6 +6,8 @@ import { CiscoIosScopeProvider } from './cisco-ios-scopeProvider.js';
 import { CiscoIosCompletionProvider } from './cisco-ios-completionProvider.js';
 import { CiscoIosLinker } from './cisco-ios-linker.js';
 import { CiscoIosSemanticTokenProvider } from './cisco-ios-semanticTokenProvider.js';
+import { CiscoIosDocumentValidator } from './cisco-ios-documentValidator.js';
+import { CiscoIosHoverProvider } from './cisco-ios-hoverProvider.js';
 /**
  * Dependency injection module that overrides Langium default services and contributes the
  * declared custom services. The Langium defaults can be partially specified to override only
@@ -13,7 +15,8 @@ import { CiscoIosSemanticTokenProvider } from './cisco-ios-semanticTokenProvider
  */
 export const CiscoIosModule = {
     validation: {
-        CiscoIosValidator: () => new CiscoIosValidator()
+        CiscoIosValidator: () => new CiscoIosValidator(),
+        DocumentValidator: (services) => new CiscoIosDocumentValidator(services)
     },
     references: {
         ScopeProvider: (services) => new CiscoIosScopeProvider(services),
@@ -21,7 +24,8 @@ export const CiscoIosModule = {
     },
     lsp: {
         CompletionProvider: (services) => new CiscoIosCompletionProvider(services),
-        SemanticTokenProvider: (services) => new CiscoIosSemanticTokenProvider(services)
+        SemanticTokenProvider: (services) => new CiscoIosSemanticTokenProvider(services),
+        HoverProvider: (services) => new CiscoIosHoverProvider(services),
     }
 };
 /**
