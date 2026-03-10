@@ -16,7 +16,6 @@ export class CiscoIosHoverProvider {
         return this.getHoverFromDetails((_c = leafNode.astNode) === null || _c === void 0 ? void 0 : _c.$type);
     }
     getHoverFromDetails(key) {
-        console.log("key: " + key);
         if (!key)
             return undefined;
         const detail = commandDetails[key];

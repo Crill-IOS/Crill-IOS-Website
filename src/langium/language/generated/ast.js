@@ -10,7 +10,7 @@ export const CiscoIosTerminals = {
     INTERFACE_NUMBER: /[0-9]+\/[0-9]+(\.[0-9]+)?/,
     NL: /(\r?\n)/,
     IPv4_DDC: /(([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+))/,
-    INPUT_lexer: /[A-Za-z0-9\-_.,]*[A-Za-z][A-Za-z0-9\-_.,]*/,
+    INPUT_lexer: /[A-Za-z0-9\-_.,!#]*[A-Za-z][A-Za-z0-9\-_.,!#]*/,
     INT: /[0-9]+/,
 };
 export const Access_group_direction = 'Access_group_direction';
@@ -404,10 +404,6 @@ export function isBgp_update_source_interface_type_gigabitethernet(item) {
 export const CarrierDelay_cmd = 'CarrierDelay_cmd';
 export function isCarrierDelay_cmd(item) {
     return reflection.isInstance(item, CarrierDelay_cmd);
-}
-export const COMMENT = 'COMMENT';
-export function isCOMMENT(item) {
-    return reflection.isInstance(item, COMMENT);
 }
 export const COMMENTLINE = 'COMMENTLINE';
 export function isCOMMENTLINE(item) {
@@ -1023,7 +1019,7 @@ export function isExit_rip(item) {
 }
 export class CiscoIosAstReflection extends langium.AbstractAstReflection {
     getAllTypes() {
-        return [ACL_NAME, ACL_NUMBER, ACL_PORT_NUMBER, ACL_STATEMENT_NUMBER, Access_group_direction, Access_group_in, Access_group_out, Acl_any_match, Acl_dest_any_match, Acl_dest_host_match, Acl_dest_network_match, Acl_extended_cmd, Acl_extended_cmds, Acl_extended_deny_cmd, Acl_extended_match, Acl_extended_match_dest, Acl_extended_permit_cmd, Acl_host_match, Acl_network_match, Acl_port_bgp, Acl_port_domain, Acl_port_ftp, Acl_port_http, Acl_port_https, Acl_port_isakmp, Acl_port_match, Acl_port_name, Acl_port_ntp, Acl_port_number, Acl_port_snmp, Acl_port_ssh, Acl_port_telnet, Acl_port_tftp, Acl_port_value, Acl_protocol, Acl_protocol_gre, Acl_protocol_icmp, Acl_protocol_ip, Acl_protocol_tcp, Acl_protocol_udp, Acl_standard_cmd, Acl_standard_cmds, Acl_standard_deny_cmd, Acl_standard_match, Acl_standard_permit_cmd, AlgorithmTypeOption, AlgorithmType_Options, BANNER_MESSAGE, BGP_AS_NUMBER, BGP_EBGP_MULTIHOP_NUMBER, Banner_cmd, Banner_cmd_option, Bgp_cmds, Bgp_neigbour_ebgp_multihop_option, Bgp_neighbor_cmd, Bgp_neighbour_Remote_as_option, Bgp_neighbour_options, Bgp_neighbour_update_source_option, Bgp_network_cmd, Bgp_router_id_cmd, Bgp_update_source_interface_type_fastethernet, Bgp_update_source_interface_type_gigabitethernet, Bgp_update_source_interface_types, COMMENT, COMMENTLINE, COMMON, CONSOLE_NUMBER, CarrierDelay_cmd, Configure_cmd, Configure_cmd_options, Configure_cmds, Crypto_cmd, Crypto_cmd_option, DESCRIPTION_INPUT, DOMAINNAME_INPUT, Description_cmd, Domainname_cmd, Duplex_cmd, Duplex_option, Enable_cmds, ExecTimeout_cmd, Exit_acl_extended, Exit_acl_standard, Exit_bgp, Exit_configure, Exit_interface_fastethernet, Exit_interface_gigabitethernet, Exit_interface_vlan, Exit_line_console, Exit_line_vty, Exit_ospf, Exit_rip, Generate_cmd, Generate_cmd_option, HOSTNAME_INPUT, Hostname_cmd, INTERFACE_CARRIER_DELAY_NUMBER, INTERFACE_NUMBER_INPUT, INTERFACE_SPEED_NUMBER, INTERFACE_VLAN_NUMBER, IP, IP_cmd, IP_cmd_interface, IP_cmd_option, Interface_cmd, Interface_fastethernet_cmds, Interface_gigabitethernet_cmds, Interface_type_fastethernet, Interface_type_gigabitethernet, Interface_type_vlan, Interface_types, Interface_vlan_cmds, Ip_Helper_cmd, Ip_access_list_cmd_option, Ip_access_list_option, Ip_cmd_option_access_group, Ip_cmd_option_address, Ip_cmd_option_nat, Ip_cmd_option_ospf, Ip_cmd_option_ospf_option_cost, Ip_cmd_option_ospf_option_priority, Ip_cmd_option_ospf_options, Ip_cmd_options, Ip_nat_cmd, Ip_nat_cmd_option, Ip_nat_inside_cmd, Ip_nat_inside_source_cmd, Ip_nat_inside_source_list_cmd, Ip_nat_inside_source_list_interface_cmd, Ip_nat_overload_cmd, KEYWORDS, Key_cmd, Key_cmd_option, Line_ExecTimeoutValue, Line_LoggingOption, Line_LoginOption, Line_cmd, Line_console_cmds, Line_type_console, Line_type_vty, Line_types, Line_vty_cmds, Logging_cmd, Login_cmd, MD5Option, MD5Option_cmd, MODULUS_INPUT, Modulus_cmd, NAT_INTERFACE_NUMBER_INPUT, Nat_direction, Nat_inside, Nat_interface_fastethernet, Nat_interface_gigabitethernet, Nat_interface_types, Nat_outside, No_banner_cmd, No_cmd, No_cmd_interface, No_cmd_interface_option, No_ip_cmd, No_ip_cmd_option_domain_lookup, No_ip_cmd_options, No_options, OSPF_AREA_NUMBER, OSPF_COST_NUMBER, OSPF_PASSIVE_INTERFACE_NUMBER, OSPF_PRIORITY_NUMBER, OSPF_PROCESS_NUMBER, Ospf_cmds, Ospf_default_information_cmd, Ospf_default_information_cmd_options, Ospf_interface_types, Ospf_network_cmd, Ospf_passive_interface_cmd, Ospf_passive_interface_type_fastethernet, Ospf_passive_interface_type_gigabitethernet, Ospf_priority_cmd, Ospf_redistribute_cmd, Ospf_redistribute_cmd_options, Ospf_router_id_cmd, PRIVILEGE_INPUT, PasswordOption, Ping_cmd, PrivilegeOption, RIP_PASSIVE_INTERFACE_NUMBER, RIP_VERSION_NUMBER, ROUTER_ID, Rip_cmds, Rip_default_information_cmd, Rip_default_information_cmd_options, Rip_interface_types, Rip_network_cmd, Rip_no_cmd_options, Rip_no_cmds, Rip_passive_interface_cmd, Rip_passive_interface_type_fastethernet, Rip_passive_interface_type_gigabitethernet, Rip_redistribute_cmd, Rip_redistribute_cmd_options, Rip_version_cmd, Router_cmd, Router_cmd_option, Rsa_cmd, Rsa_cmd_option, SSHOptions, SSH_cmd, SUBNETMASK, Script, ScryptOption, ScryptOption_cmd, SecretOption, Sha256Option, Sha256Option_cmd, Show_cmd, Show_cmd_options, Show_interface_option, Show_run_option, Shutdown_cmd, Speed_cmd, Speed_cmd_fe, Stat, Template_grundkonfig_cmd, Template_interface_cmd, Template_ospf_cmd, Template_rip_cmd, TransportInputList, TransportInput_cmd, TransportProto, Transport_cmd, Transport_cmd_option, UPDATE_SOURCE_INTERFACE_NUMBER_INPUT, USERNAME_INPUT, USERNAME_PASSWORD_INPUT, UsageKeys_Option, UsageKeys_cmd, Username_cmd, Username_cmd_option, VERSION_INPUT, VTY_NUMBER, WILDCARDMASK];
+        return [ACL_NAME, ACL_NUMBER, ACL_PORT_NUMBER, ACL_STATEMENT_NUMBER, Access_group_direction, Access_group_in, Access_group_out, Acl_any_match, Acl_dest_any_match, Acl_dest_host_match, Acl_dest_network_match, Acl_extended_cmd, Acl_extended_cmds, Acl_extended_deny_cmd, Acl_extended_match, Acl_extended_match_dest, Acl_extended_permit_cmd, Acl_host_match, Acl_network_match, Acl_port_bgp, Acl_port_domain, Acl_port_ftp, Acl_port_http, Acl_port_https, Acl_port_isakmp, Acl_port_match, Acl_port_name, Acl_port_ntp, Acl_port_number, Acl_port_snmp, Acl_port_ssh, Acl_port_telnet, Acl_port_tftp, Acl_port_value, Acl_protocol, Acl_protocol_gre, Acl_protocol_icmp, Acl_protocol_ip, Acl_protocol_tcp, Acl_protocol_udp, Acl_standard_cmd, Acl_standard_cmds, Acl_standard_deny_cmd, Acl_standard_match, Acl_standard_permit_cmd, AlgorithmTypeOption, AlgorithmType_Options, BANNER_MESSAGE, BGP_AS_NUMBER, BGP_EBGP_MULTIHOP_NUMBER, Banner_cmd, Banner_cmd_option, Bgp_cmds, Bgp_neigbour_ebgp_multihop_option, Bgp_neighbor_cmd, Bgp_neighbour_Remote_as_option, Bgp_neighbour_options, Bgp_neighbour_update_source_option, Bgp_network_cmd, Bgp_router_id_cmd, Bgp_update_source_interface_type_fastethernet, Bgp_update_source_interface_type_gigabitethernet, Bgp_update_source_interface_types, COMMENTLINE, COMMON, CONSOLE_NUMBER, CarrierDelay_cmd, Configure_cmd, Configure_cmd_options, Configure_cmds, Crypto_cmd, Crypto_cmd_option, DESCRIPTION_INPUT, DOMAINNAME_INPUT, Description_cmd, Domainname_cmd, Duplex_cmd, Duplex_option, Enable_cmds, ExecTimeout_cmd, Exit_acl_extended, Exit_acl_standard, Exit_bgp, Exit_configure, Exit_interface_fastethernet, Exit_interface_gigabitethernet, Exit_interface_vlan, Exit_line_console, Exit_line_vty, Exit_ospf, Exit_rip, Generate_cmd, Generate_cmd_option, HOSTNAME_INPUT, Hostname_cmd, INTERFACE_CARRIER_DELAY_NUMBER, INTERFACE_NUMBER_INPUT, INTERFACE_SPEED_NUMBER, INTERFACE_VLAN_NUMBER, IP, IP_cmd, IP_cmd_interface, IP_cmd_option, Interface_cmd, Interface_fastethernet_cmds, Interface_gigabitethernet_cmds, Interface_type_fastethernet, Interface_type_gigabitethernet, Interface_type_vlan, Interface_types, Interface_vlan_cmds, Ip_Helper_cmd, Ip_access_list_cmd_option, Ip_access_list_option, Ip_cmd_option_access_group, Ip_cmd_option_address, Ip_cmd_option_nat, Ip_cmd_option_ospf, Ip_cmd_option_ospf_option_cost, Ip_cmd_option_ospf_option_priority, Ip_cmd_option_ospf_options, Ip_cmd_options, Ip_nat_cmd, Ip_nat_cmd_option, Ip_nat_inside_cmd, Ip_nat_inside_source_cmd, Ip_nat_inside_source_list_cmd, Ip_nat_inside_source_list_interface_cmd, Ip_nat_overload_cmd, KEYWORDS, Key_cmd, Key_cmd_option, Line_ExecTimeoutValue, Line_LoggingOption, Line_LoginOption, Line_cmd, Line_console_cmds, Line_type_console, Line_type_vty, Line_types, Line_vty_cmds, Logging_cmd, Login_cmd, MD5Option, MD5Option_cmd, MODULUS_INPUT, Modulus_cmd, NAT_INTERFACE_NUMBER_INPUT, Nat_direction, Nat_inside, Nat_interface_fastethernet, Nat_interface_gigabitethernet, Nat_interface_types, Nat_outside, No_banner_cmd, No_cmd, No_cmd_interface, No_cmd_interface_option, No_ip_cmd, No_ip_cmd_option_domain_lookup, No_ip_cmd_options, No_options, OSPF_AREA_NUMBER, OSPF_COST_NUMBER, OSPF_PASSIVE_INTERFACE_NUMBER, OSPF_PRIORITY_NUMBER, OSPF_PROCESS_NUMBER, Ospf_cmds, Ospf_default_information_cmd, Ospf_default_information_cmd_options, Ospf_interface_types, Ospf_network_cmd, Ospf_passive_interface_cmd, Ospf_passive_interface_type_fastethernet, Ospf_passive_interface_type_gigabitethernet, Ospf_priority_cmd, Ospf_redistribute_cmd, Ospf_redistribute_cmd_options, Ospf_router_id_cmd, PRIVILEGE_INPUT, PasswordOption, Ping_cmd, PrivilegeOption, RIP_PASSIVE_INTERFACE_NUMBER, RIP_VERSION_NUMBER, ROUTER_ID, Rip_cmds, Rip_default_information_cmd, Rip_default_information_cmd_options, Rip_interface_types, Rip_network_cmd, Rip_no_cmd_options, Rip_no_cmds, Rip_passive_interface_cmd, Rip_passive_interface_type_fastethernet, Rip_passive_interface_type_gigabitethernet, Rip_redistribute_cmd, Rip_redistribute_cmd_options, Rip_version_cmd, Router_cmd, Router_cmd_option, Rsa_cmd, Rsa_cmd_option, SSHOptions, SSH_cmd, SUBNETMASK, Script, ScryptOption, ScryptOption_cmd, SecretOption, Sha256Option, Sha256Option_cmd, Show_cmd, Show_cmd_options, Show_interface_option, Show_run_option, Shutdown_cmd, Speed_cmd, Speed_cmd_fe, Stat, Template_grundkonfig_cmd, Template_interface_cmd, Template_ospf_cmd, Template_rip_cmd, TransportInputList, TransportInput_cmd, TransportProto, Transport_cmd, Transport_cmd_option, UPDATE_SOURCE_INTERFACE_NUMBER_INPUT, USERNAME_INPUT, USERNAME_PASSWORD_INPUT, UsageKeys_Option, UsageKeys_cmd, Username_cmd, Username_cmd_option, VERSION_INPUT, VTY_NUMBER, WILDCARDMASK];
     }
     computeIsSubtype(subtype, supertype) {
         switch (subtype) {
@@ -1309,8 +1305,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Acl_extended_cmd,
                     properties: [
-                        { name: 'comment' },
-                        { name: 'name' }
+                        { name: 'name' },
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -1318,8 +1314,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Acl_extended_deny_cmd,
                     properties: [
-                        { name: 'comment' },
                         { name: 'destination' },
+                        { name: 'nl' },
                         { name: 'protocol' },
                         { name: 'sequence' },
                         { name: 'source' }
@@ -1330,8 +1326,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Acl_extended_permit_cmd,
                     properties: [
-                        { name: 'comment' },
                         { name: 'destination' },
+                        { name: 'nl' },
                         { name: 'protocol' },
                         { name: 'sequence' },
                         { name: 'source' }
@@ -1527,7 +1523,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Acl_standard_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'value' }
                     ]
                 };
@@ -1536,7 +1532,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Acl_standard_deny_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'option' }
                     ]
                 };
@@ -1545,7 +1541,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Acl_standard_permit_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'option' }
                     ]
                 };
@@ -1570,8 +1566,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Banner_cmd,
                     properties: [
-                        { name: 'comment' },
                         { name: 'message' },
+                        { name: 'nl' },
                         { name: 'option' }
                     ]
                 };
@@ -1620,8 +1616,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Bgp_neighbor_cmd,
                     properties: [
-                        { name: 'comment' },
                         { name: 'neighbour' },
+                        { name: 'nl' },
                         { name: 'option' }
                     ]
                 };
@@ -1638,9 +1634,9 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Bgp_network_cmd,
                     properties: [
-                        { name: 'comment' },
                         { name: 'ip' },
-                        { name: 'mask' }
+                        { name: 'mask' },
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -1648,8 +1644,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Bgp_router_id_cmd,
                     properties: [
-                        { name: 'comment' },
-                        { name: 'id' }
+                        { name: 'id' },
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -1675,16 +1671,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: CarrierDelay_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'seconds' }
-                    ]
-                };
-            }
-            case COMMENT: {
-                return {
-                    name: COMMENT,
-                    properties: [
-                        { name: 'value' }
                     ]
                 };
             }
@@ -1700,7 +1688,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Configure_cmd_options,
                     properties: [
-                        { name: 'comment' }
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -1716,7 +1704,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Crypto_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'option' }
                     ]
                 };
@@ -1725,7 +1713,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Description_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'value' }
                     ]
                 };
@@ -1742,7 +1730,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Domainname_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'value' }
                     ]
                 };
@@ -1759,7 +1747,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Duplex_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'option' }
                     ]
                 };
@@ -1800,7 +1788,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Hostname_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'value' }
                     ]
                 };
@@ -1849,7 +1837,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Interface_type_fastethernet,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -1859,7 +1847,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Interface_type_gigabitethernet,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -1869,7 +1857,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Interface_type_vlan,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -1919,9 +1907,9 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Ip_cmd_option_access_group,
                     properties: [
-                        { name: 'comment' },
                         { name: 'direction' },
-                        { name: 'name' }
+                        { name: 'name' },
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -1929,9 +1917,9 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Ip_cmd_option_address,
                     properties: [
-                        { name: 'comment' },
                         { name: 'ip' },
-                        { name: 'mask' }
+                        { name: 'mask' },
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -1939,8 +1927,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Ip_cmd_option_nat,
                     properties: [
-                        { name: 'comment' },
-                        { name: 'direction' }
+                        { name: 'direction' },
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -1948,7 +1936,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Ip_cmd_option_ospf,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'option' }
                     ]
                 };
@@ -1973,7 +1961,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Ip_Helper_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'value' }
                     ]
                 };
@@ -2032,7 +2020,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Ip_nat_overload_cmd,
                     properties: [
-                        { name: 'comment' }
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -2065,8 +2053,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Line_ExecTimeoutValue,
                     properties: [
-                        { name: 'comment' },
                         { name: 'minutes' },
+                        { name: 'nl' },
                         { name: 'seconds' }
                     ]
                 };
@@ -2075,7 +2063,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Line_LoggingOption,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'option' }
                     ]
                 };
@@ -2084,7 +2072,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Line_LoginOption,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'option' }
                     ]
                 };
@@ -2093,7 +2081,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Line_type_console,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -2103,8 +2091,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Line_type_vty,
                     properties: [
-                        { name: 'comment' },
                         { name: 'end' },
+                        { name: 'nl' },
                         { name: 'start' },
                         { name: 'type' }
                     ]
@@ -2194,7 +2182,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: No_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'option' }
                     ]
                 };
@@ -2211,7 +2199,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: No_cmd_interface_option,
                     properties: [
-                        { name: 'comment' }
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -2251,7 +2239,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Ospf_default_information_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'option' }
                     ]
                 };
@@ -2269,9 +2257,9 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Ospf_network_cmd,
                     properties: [
                         { name: 'area' },
-                        { name: 'comment' },
                         { name: 'ip' },
-                        { name: 'mask' }
+                        { name: 'mask' },
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -2279,7 +2267,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Ospf_passive_interface_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'types' }
                     ]
                 };
@@ -2314,7 +2302,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Ospf_priority_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'value' }
                     ]
                 };
@@ -2339,7 +2327,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Ospf_redistribute_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'option' }
                     ]
                 };
@@ -2356,8 +2344,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Ospf_router_id_cmd,
                     properties: [
-                        { name: 'comment' },
-                        { name: 'id' }
+                        { name: 'id' },
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -2373,8 +2361,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Ping_cmd,
                     properties: [
-                        { name: 'comment' },
-                        { name: 'ip' }
+                        { name: 'ip' },
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -2398,7 +2386,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Rip_default_information_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'option' }
                     ]
                 };
@@ -2415,8 +2403,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Rip_network_cmd,
                     properties: [
-                        { name: 'comment' },
-                        { name: 'ip' }
+                        { name: 'ip' },
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -2432,7 +2420,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Rip_no_cmds,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'options' }
                     ]
                 };
@@ -2457,7 +2445,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Rip_passive_interface_type_fastethernet,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -2467,7 +2455,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Rip_passive_interface_type_gigabitethernet,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -2477,7 +2465,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Rip_redistribute_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'option' }
                     ]
                 };
@@ -2519,7 +2507,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Router_cmd_option,
                     properties: [
                         { name: 'asn' },
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'process' }
                     ]
                 };
@@ -2600,7 +2588,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Show_interface_option,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'option' }
                     ]
                 };
@@ -2609,7 +2597,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Show_run_option,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'option' }
                     ]
                 };
@@ -2618,7 +2606,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Shutdown_cmd,
                     properties: [
-                        { name: 'comment' }
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -2626,7 +2614,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Speed_cmd,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'value' }
                     ]
                 };
@@ -2635,7 +2623,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Speed_cmd_fe,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'value' }
                     ]
                 };
@@ -2652,7 +2640,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: SSHOptions,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'value' }
                     ]
                 };
@@ -2677,7 +2665,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Template_grundkonfig_cmd,
                     properties: [
-                        { name: 'comment' }
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -2685,7 +2673,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Template_interface_cmd,
                     properties: [
-                        { name: 'comment' }
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -2693,7 +2681,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Template_ospf_cmd,
                     properties: [
-                        { name: 'comment' }
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -2701,7 +2689,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Template_rip_cmd,
                     properties: [
-                        { name: 'comment' }
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -2717,7 +2705,7 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: TransportInputList,
                     properties: [
-                        { name: 'comment' },
+                        { name: 'nl' },
                         { name: 'options', defaultValue: [] }
                     ]
                 };
@@ -2750,8 +2738,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Username_cmd,
                     properties: [
-                        { name: 'comment' },
                         { name: 'name' },
+                        { name: 'nl' },
                         { name: 'options', defaultValue: [] }
                     ]
                 };
@@ -2800,9 +2788,9 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Acl_extended_cmds,
                     properties: [
-                        { name: 'comment' },
                         { name: 'lines', defaultValue: [] },
-                        { name: 'name' }
+                        { name: 'name' },
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -2810,8 +2798,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Acl_standard_cmds,
                     properties: [
-                        { name: 'comment' },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'value' }
                     ]
                 };
@@ -2820,8 +2808,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Configure_cmds,
                     properties: [
-                        { name: 'comment' },
-                        { name: 'lines', defaultValue: [] }
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -2829,8 +2817,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Interface_fastethernet_cmds,
                     properties: [
-                        { name: 'comment' },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -2840,8 +2828,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Interface_gigabitethernet_cmds,
                     properties: [
-                        { name: 'comment' },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -2851,8 +2839,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Interface_vlan_cmds,
                     properties: [
-                        { name: 'comment' },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -2862,8 +2850,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Line_console_cmds,
                     properties: [
-                        { name: 'comment' },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -2873,9 +2861,9 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                 return {
                     name: Line_vty_cmds,
                     properties: [
-                        { name: 'comment' },
                         { name: 'end' },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'start' },
                         { name: 'type' }
                     ]
@@ -2886,8 +2874,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Bgp_cmds,
                     properties: [
                         { name: 'asn' },
-                        { name: 'comment' },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'process' }
                     ]
                 };
@@ -2897,8 +2885,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Ospf_cmds,
                     properties: [
                         { name: 'asn' },
-                        { name: 'comment' },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'process' }
                     ]
                 };
@@ -2908,8 +2896,8 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Rip_cmds,
                     properties: [
                         { name: 'asn' },
-                        { name: 'comment' },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'process' }
                     ]
                 };
@@ -2919,10 +2907,10 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Exit_acl_extended,
                     properties: [
                         { name: 'command' },
-                        { name: 'comment' },
                         { name: 'continuation', defaultValue: [] },
                         { name: 'lines', defaultValue: [] },
-                        { name: 'name' }
+                        { name: 'name' },
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -2931,9 +2919,9 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Exit_acl_standard,
                     properties: [
                         { name: 'command' },
-                        { name: 'comment' },
                         { name: 'continuation', defaultValue: [] },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'value' }
                     ]
                 };
@@ -2943,9 +2931,9 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Exit_configure,
                     properties: [
                         { name: 'command' },
-                        { name: 'comment' },
                         { name: 'continuation', defaultValue: [] },
-                        { name: 'lines', defaultValue: [] }
+                        { name: 'lines', defaultValue: [] },
+                        { name: 'nl' }
                     ]
                 };
             }
@@ -2954,9 +2942,9 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Exit_interface_fastethernet,
                     properties: [
                         { name: 'command' },
-                        { name: 'comment' },
                         { name: 'continuation', defaultValue: [] },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -2967,9 +2955,9 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Exit_interface_gigabitethernet,
                     properties: [
                         { name: 'command' },
-                        { name: 'comment' },
                         { name: 'continuation', defaultValue: [] },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -2980,9 +2968,9 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Exit_interface_vlan,
                     properties: [
                         { name: 'command' },
-                        { name: 'comment' },
                         { name: 'continuation', defaultValue: [] },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -2993,9 +2981,9 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Exit_line_console,
                     properties: [
                         { name: 'command' },
-                        { name: 'comment' },
                         { name: 'continuation', defaultValue: [] },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'number' },
                         { name: 'type' }
                     ]
@@ -3006,10 +2994,10 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: Exit_line_vty,
                     properties: [
                         { name: 'command' },
-                        { name: 'comment' },
                         { name: 'continuation', defaultValue: [] },
                         { name: 'end' },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'start' },
                         { name: 'type' }
                     ]
@@ -3021,9 +3009,9 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     properties: [
                         { name: 'asn' },
                         { name: 'command' },
-                        { name: 'comment' },
                         { name: 'continuation', defaultValue: [] },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'process' }
                     ]
                 };
@@ -3034,9 +3022,9 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     properties: [
                         { name: 'asn' },
                         { name: 'command' },
-                        { name: 'comment' },
                         { name: 'continuation', defaultValue: [] },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'process' }
                     ]
                 };
@@ -3047,9 +3035,9 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     properties: [
                         { name: 'asn' },
                         { name: 'command' },
-                        { name: 'comment' },
                         { name: 'continuation', defaultValue: [] },
                         { name: 'lines', defaultValue: [] },
+                        { name: 'nl' },
                         { name: 'process' }
                     ]
                 };

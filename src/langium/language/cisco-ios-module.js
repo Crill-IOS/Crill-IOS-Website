@@ -2,7 +2,6 @@ import { inject } from 'langium';
 import { createDefaultModule, createDefaultSharedModule } from 'langium/lsp';
 import { CiscoIOSGeneratedModule, CiscoIosGeneratedSharedModule } from './generated/module.js';
 import { CiscoIosValidator, registerValidationChecks } from './cisco-ios-validator.js';
-import { CiscoIosScopeProvider } from './cisco-ios-scopeProvider.js';
 import { CiscoIosCompletionProvider } from './cisco-ios-completionProvider.js';
 import { CiscoIosLinker } from './cisco-ios-linker.js';
 import { CiscoIosSemanticTokenProvider } from './cisco-ios-semanticTokenProvider.js';
@@ -19,7 +18,6 @@ export const CiscoIosModule = {
         DocumentValidator: (services) => new CiscoIosDocumentValidator(services)
     },
     references: {
-        ScopeProvider: (services) => new CiscoIosScopeProvider(services),
         Linker: (services) => new CiscoIosLinker(services),
     },
     lsp: {
