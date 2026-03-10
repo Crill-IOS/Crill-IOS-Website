@@ -1,9 +1,8 @@
 import { CstUtils } from "langium";
-import commandDetails from './details/Command_Details.json';
+import { commandDetails } from './details/commandDetails.js';
 export class CiscoIosHoverProvider {
     constructor(services) {
         this.services = services;
-        this.commandDetails = commandDetails;
     }
     getHoverContent(document, params) {
         var _a, _b, _c;
@@ -17,14 +16,15 @@ export class CiscoIosHoverProvider {
         return this.getHoverFromDetails((_c = leafNode.astNode) === null || _c === void 0 ? void 0 : _c.$type);
     }
     getHoverFromDetails(key) {
+        console.log("key: " + key);
         if (!key)
             return undefined;
-        const detail = this.commandDetails[key];
+        const detail = commandDetails[key];
         if (!detail)
             return undefined;
         const content = {
             kind: 'markdown',
-            value: `**${detail.label.replaceAll("<", "").replaceAll(">", "")}**\n\n${detail.description}`
+            value: `**${detail.label.replaceAll("<", "").replaceAll(">", "")}**\n\n${detail.description}\n\nKey: ${key}\n\nDefault-Value: ${detail.insert}`
         };
         return { contents: content };
     }

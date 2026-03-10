@@ -801,6 +801,10 @@ export const Router_cmd_option = 'Router_cmd_option';
 export function isRouter_cmd_option(item) {
     return reflection.isInstance(item, Router_cmd_option);
 }
+export const ROUTER_ID = 'ROUTER_ID';
+export function isROUTER_ID(item) {
+    return reflection.isInstance(item, ROUTER_ID);
+}
 export const Rsa_cmd = 'Rsa_cmd';
 export function isRsa_cmd(item) {
     return reflection.isInstance(item, Rsa_cmd);
@@ -868,6 +872,22 @@ export function isStat(item) {
 export const SUBNETMASK = 'SUBNETMASK';
 export function isSUBNETMASK(item) {
     return reflection.isInstance(item, SUBNETMASK);
+}
+export const Template_grundkonfig_cmd = 'Template_grundkonfig_cmd';
+export function isTemplate_grundkonfig_cmd(item) {
+    return reflection.isInstance(item, Template_grundkonfig_cmd);
+}
+export const Template_interface_cmd = 'Template_interface_cmd';
+export function isTemplate_interface_cmd(item) {
+    return reflection.isInstance(item, Template_interface_cmd);
+}
+export const Template_ospf_cmd = 'Template_ospf_cmd';
+export function isTemplate_ospf_cmd(item) {
+    return reflection.isInstance(item, Template_ospf_cmd);
+}
+export const Template_rip_cmd = 'Template_rip_cmd';
+export function isTemplate_rip_cmd(item) {
+    return reflection.isInstance(item, Template_rip_cmd);
 }
 export const Transport_cmd_option = 'Transport_cmd_option';
 export function isTransport_cmd_option(item) {
@@ -1003,7 +1023,7 @@ export function isExit_rip(item) {
 }
 export class CiscoIosAstReflection extends langium.AbstractAstReflection {
     getAllTypes() {
-        return [ACL_NAME, ACL_NUMBER, ACL_PORT_NUMBER, ACL_STATEMENT_NUMBER, Access_group_direction, Access_group_in, Access_group_out, Acl_any_match, Acl_dest_any_match, Acl_dest_host_match, Acl_dest_network_match, Acl_extended_cmd, Acl_extended_cmds, Acl_extended_deny_cmd, Acl_extended_match, Acl_extended_match_dest, Acl_extended_permit_cmd, Acl_host_match, Acl_network_match, Acl_port_bgp, Acl_port_domain, Acl_port_ftp, Acl_port_http, Acl_port_https, Acl_port_isakmp, Acl_port_match, Acl_port_name, Acl_port_ntp, Acl_port_number, Acl_port_snmp, Acl_port_ssh, Acl_port_telnet, Acl_port_tftp, Acl_port_value, Acl_protocol, Acl_protocol_gre, Acl_protocol_icmp, Acl_protocol_ip, Acl_protocol_tcp, Acl_protocol_udp, Acl_standard_cmd, Acl_standard_cmds, Acl_standard_deny_cmd, Acl_standard_match, Acl_standard_permit_cmd, AlgorithmTypeOption, AlgorithmType_Options, BANNER_MESSAGE, BGP_AS_NUMBER, BGP_EBGP_MULTIHOP_NUMBER, Banner_cmd, Banner_cmd_option, Bgp_cmds, Bgp_neigbour_ebgp_multihop_option, Bgp_neighbor_cmd, Bgp_neighbour_Remote_as_option, Bgp_neighbour_options, Bgp_neighbour_update_source_option, Bgp_network_cmd, Bgp_router_id_cmd, Bgp_update_source_interface_type_fastethernet, Bgp_update_source_interface_type_gigabitethernet, Bgp_update_source_interface_types, COMMENT, COMMENTLINE, COMMON, CONSOLE_NUMBER, CarrierDelay_cmd, Configure_cmd, Configure_cmd_options, Configure_cmds, Crypto_cmd, Crypto_cmd_option, DESCRIPTION_INPUT, DOMAINNAME_INPUT, Description_cmd, Domainname_cmd, Duplex_cmd, Duplex_option, Enable_cmds, ExecTimeout_cmd, Exit_acl_extended, Exit_acl_standard, Exit_bgp, Exit_configure, Exit_interface_fastethernet, Exit_interface_gigabitethernet, Exit_interface_vlan, Exit_line_console, Exit_line_vty, Exit_ospf, Exit_rip, Generate_cmd, Generate_cmd_option, HOSTNAME_INPUT, Hostname_cmd, INTERFACE_CARRIER_DELAY_NUMBER, INTERFACE_NUMBER_INPUT, INTERFACE_SPEED_NUMBER, INTERFACE_VLAN_NUMBER, IP, IP_cmd, IP_cmd_interface, IP_cmd_option, Interface_cmd, Interface_fastethernet_cmds, Interface_gigabitethernet_cmds, Interface_type_fastethernet, Interface_type_gigabitethernet, Interface_type_vlan, Interface_types, Interface_vlan_cmds, Ip_Helper_cmd, Ip_access_list_cmd_option, Ip_access_list_option, Ip_cmd_option_access_group, Ip_cmd_option_address, Ip_cmd_option_nat, Ip_cmd_option_ospf, Ip_cmd_option_ospf_option_cost, Ip_cmd_option_ospf_option_priority, Ip_cmd_option_ospf_options, Ip_cmd_options, Ip_nat_cmd, Ip_nat_cmd_option, Ip_nat_inside_cmd, Ip_nat_inside_source_cmd, Ip_nat_inside_source_list_cmd, Ip_nat_inside_source_list_interface_cmd, Ip_nat_overload_cmd, KEYWORDS, Key_cmd, Key_cmd_option, Line_ExecTimeoutValue, Line_LoggingOption, Line_LoginOption, Line_cmd, Line_console_cmds, Line_type_console, Line_type_vty, Line_types, Line_vty_cmds, Logging_cmd, Login_cmd, MD5Option, MD5Option_cmd, MODULUS_INPUT, Modulus_cmd, NAT_INTERFACE_NUMBER_INPUT, Nat_direction, Nat_inside, Nat_interface_fastethernet, Nat_interface_gigabitethernet, Nat_interface_types, Nat_outside, No_banner_cmd, No_cmd, No_cmd_interface, No_cmd_interface_option, No_ip_cmd, No_ip_cmd_option_domain_lookup, No_ip_cmd_options, No_options, OSPF_AREA_NUMBER, OSPF_COST_NUMBER, OSPF_PASSIVE_INTERFACE_NUMBER, OSPF_PRIORITY_NUMBER, OSPF_PROCESS_NUMBER, Ospf_cmds, Ospf_default_information_cmd, Ospf_default_information_cmd_options, Ospf_interface_types, Ospf_network_cmd, Ospf_passive_interface_cmd, Ospf_passive_interface_type_fastethernet, Ospf_passive_interface_type_gigabitethernet, Ospf_priority_cmd, Ospf_redistribute_cmd, Ospf_redistribute_cmd_options, Ospf_router_id_cmd, PRIVILEGE_INPUT, PasswordOption, Ping_cmd, PrivilegeOption, RIP_PASSIVE_INTERFACE_NUMBER, RIP_VERSION_NUMBER, Rip_cmds, Rip_default_information_cmd, Rip_default_information_cmd_options, Rip_interface_types, Rip_network_cmd, Rip_no_cmd_options, Rip_no_cmds, Rip_passive_interface_cmd, Rip_passive_interface_type_fastethernet, Rip_passive_interface_type_gigabitethernet, Rip_redistribute_cmd, Rip_redistribute_cmd_options, Rip_version_cmd, Router_cmd, Router_cmd_option, Rsa_cmd, Rsa_cmd_option, SSHOptions, SSH_cmd, SUBNETMASK, Script, ScryptOption, ScryptOption_cmd, SecretOption, Sha256Option, Sha256Option_cmd, Show_cmd, Show_cmd_options, Show_interface_option, Show_run_option, Shutdown_cmd, Speed_cmd, Speed_cmd_fe, Stat, TransportInputList, TransportInput_cmd, TransportProto, Transport_cmd, Transport_cmd_option, UPDATE_SOURCE_INTERFACE_NUMBER_INPUT, USERNAME_INPUT, USERNAME_PASSWORD_INPUT, UsageKeys_Option, UsageKeys_cmd, Username_cmd, Username_cmd_option, VERSION_INPUT, VTY_NUMBER, WILDCARDMASK];
+        return [ACL_NAME, ACL_NUMBER, ACL_PORT_NUMBER, ACL_STATEMENT_NUMBER, Access_group_direction, Access_group_in, Access_group_out, Acl_any_match, Acl_dest_any_match, Acl_dest_host_match, Acl_dest_network_match, Acl_extended_cmd, Acl_extended_cmds, Acl_extended_deny_cmd, Acl_extended_match, Acl_extended_match_dest, Acl_extended_permit_cmd, Acl_host_match, Acl_network_match, Acl_port_bgp, Acl_port_domain, Acl_port_ftp, Acl_port_http, Acl_port_https, Acl_port_isakmp, Acl_port_match, Acl_port_name, Acl_port_ntp, Acl_port_number, Acl_port_snmp, Acl_port_ssh, Acl_port_telnet, Acl_port_tftp, Acl_port_value, Acl_protocol, Acl_protocol_gre, Acl_protocol_icmp, Acl_protocol_ip, Acl_protocol_tcp, Acl_protocol_udp, Acl_standard_cmd, Acl_standard_cmds, Acl_standard_deny_cmd, Acl_standard_match, Acl_standard_permit_cmd, AlgorithmTypeOption, AlgorithmType_Options, BANNER_MESSAGE, BGP_AS_NUMBER, BGP_EBGP_MULTIHOP_NUMBER, Banner_cmd, Banner_cmd_option, Bgp_cmds, Bgp_neigbour_ebgp_multihop_option, Bgp_neighbor_cmd, Bgp_neighbour_Remote_as_option, Bgp_neighbour_options, Bgp_neighbour_update_source_option, Bgp_network_cmd, Bgp_router_id_cmd, Bgp_update_source_interface_type_fastethernet, Bgp_update_source_interface_type_gigabitethernet, Bgp_update_source_interface_types, COMMENT, COMMENTLINE, COMMON, CONSOLE_NUMBER, CarrierDelay_cmd, Configure_cmd, Configure_cmd_options, Configure_cmds, Crypto_cmd, Crypto_cmd_option, DESCRIPTION_INPUT, DOMAINNAME_INPUT, Description_cmd, Domainname_cmd, Duplex_cmd, Duplex_option, Enable_cmds, ExecTimeout_cmd, Exit_acl_extended, Exit_acl_standard, Exit_bgp, Exit_configure, Exit_interface_fastethernet, Exit_interface_gigabitethernet, Exit_interface_vlan, Exit_line_console, Exit_line_vty, Exit_ospf, Exit_rip, Generate_cmd, Generate_cmd_option, HOSTNAME_INPUT, Hostname_cmd, INTERFACE_CARRIER_DELAY_NUMBER, INTERFACE_NUMBER_INPUT, INTERFACE_SPEED_NUMBER, INTERFACE_VLAN_NUMBER, IP, IP_cmd, IP_cmd_interface, IP_cmd_option, Interface_cmd, Interface_fastethernet_cmds, Interface_gigabitethernet_cmds, Interface_type_fastethernet, Interface_type_gigabitethernet, Interface_type_vlan, Interface_types, Interface_vlan_cmds, Ip_Helper_cmd, Ip_access_list_cmd_option, Ip_access_list_option, Ip_cmd_option_access_group, Ip_cmd_option_address, Ip_cmd_option_nat, Ip_cmd_option_ospf, Ip_cmd_option_ospf_option_cost, Ip_cmd_option_ospf_option_priority, Ip_cmd_option_ospf_options, Ip_cmd_options, Ip_nat_cmd, Ip_nat_cmd_option, Ip_nat_inside_cmd, Ip_nat_inside_source_cmd, Ip_nat_inside_source_list_cmd, Ip_nat_inside_source_list_interface_cmd, Ip_nat_overload_cmd, KEYWORDS, Key_cmd, Key_cmd_option, Line_ExecTimeoutValue, Line_LoggingOption, Line_LoginOption, Line_cmd, Line_console_cmds, Line_type_console, Line_type_vty, Line_types, Line_vty_cmds, Logging_cmd, Login_cmd, MD5Option, MD5Option_cmd, MODULUS_INPUT, Modulus_cmd, NAT_INTERFACE_NUMBER_INPUT, Nat_direction, Nat_inside, Nat_interface_fastethernet, Nat_interface_gigabitethernet, Nat_interface_types, Nat_outside, No_banner_cmd, No_cmd, No_cmd_interface, No_cmd_interface_option, No_ip_cmd, No_ip_cmd_option_domain_lookup, No_ip_cmd_options, No_options, OSPF_AREA_NUMBER, OSPF_COST_NUMBER, OSPF_PASSIVE_INTERFACE_NUMBER, OSPF_PRIORITY_NUMBER, OSPF_PROCESS_NUMBER, Ospf_cmds, Ospf_default_information_cmd, Ospf_default_information_cmd_options, Ospf_interface_types, Ospf_network_cmd, Ospf_passive_interface_cmd, Ospf_passive_interface_type_fastethernet, Ospf_passive_interface_type_gigabitethernet, Ospf_priority_cmd, Ospf_redistribute_cmd, Ospf_redistribute_cmd_options, Ospf_router_id_cmd, PRIVILEGE_INPUT, PasswordOption, Ping_cmd, PrivilegeOption, RIP_PASSIVE_INTERFACE_NUMBER, RIP_VERSION_NUMBER, ROUTER_ID, Rip_cmds, Rip_default_information_cmd, Rip_default_information_cmd_options, Rip_interface_types, Rip_network_cmd, Rip_no_cmd_options, Rip_no_cmds, Rip_passive_interface_cmd, Rip_passive_interface_type_fastethernet, Rip_passive_interface_type_gigabitethernet, Rip_redistribute_cmd, Rip_redistribute_cmd_options, Rip_version_cmd, Router_cmd, Router_cmd_option, Rsa_cmd, Rsa_cmd_option, SSHOptions, SSH_cmd, SUBNETMASK, Script, ScryptOption, ScryptOption_cmd, SecretOption, Sha256Option, Sha256Option_cmd, Show_cmd, Show_cmd_options, Show_interface_option, Show_run_option, Shutdown_cmd, Speed_cmd, Speed_cmd_fe, Stat, Template_grundkonfig_cmd, Template_interface_cmd, Template_ospf_cmd, Template_rip_cmd, TransportInputList, TransportInput_cmd, TransportProto, Transport_cmd, Transport_cmd_option, UPDATE_SOURCE_INTERFACE_NUMBER_INPUT, USERNAME_INPUT, USERNAME_PASSWORD_INPUT, UsageKeys_Option, UsageKeys_cmd, Username_cmd, Username_cmd_option, VERSION_INPUT, VTY_NUMBER, WILDCARDMASK];
     }
     computeIsSubtype(subtype, supertype) {
         switch (subtype) {
@@ -2504,6 +2524,14 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     ]
                 };
             }
+            case ROUTER_ID: {
+                return {
+                    name: ROUTER_ID,
+                    properties: [
+                        { name: 'value' }
+                    ]
+                };
+            }
             case Rsa_cmd: {
                 return {
                     name: Rsa_cmd,
@@ -2642,6 +2670,38 @@ export class CiscoIosAstReflection extends langium.AbstractAstReflection {
                     name: SUBNETMASK,
                     properties: [
                         { name: 'value' }
+                    ]
+                };
+            }
+            case Template_grundkonfig_cmd: {
+                return {
+                    name: Template_grundkonfig_cmd,
+                    properties: [
+                        { name: 'comment' }
+                    ]
+                };
+            }
+            case Template_interface_cmd: {
+                return {
+                    name: Template_interface_cmd,
+                    properties: [
+                        { name: 'comment' }
+                    ]
+                };
+            }
+            case Template_ospf_cmd: {
+                return {
+                    name: Template_ospf_cmd,
+                    properties: [
+                        { name: 'comment' }
+                    ]
+                };
+            }
+            case Template_rip_cmd: {
+                return {
+                    name: Template_rip_cmd,
+                    properties: [
+                        { name: 'comment' }
                     ]
                 };
             }

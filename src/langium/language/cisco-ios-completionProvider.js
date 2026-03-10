@@ -1,11 +1,15 @@
 import { DefaultCompletionProvider } from "langium/lsp";
-import { CompletionList } from "vscode-languageserver";
+import { CompletionList, Range, TextEdit } from "vscode-languageserver";
 import * as ast from "langium/lib/languages/generated/ast.js";
-import details from "./details/Command_Details.json";
+import { commandDetails, commandTokenDefaults } from "./details/commandDetails.js";
 export class CiscoIosCompletionProvider extends DefaultCompletionProvider {
     constructor(services) {
         super(services);
         this.services = services;
+        this.completionOptions = {
+            triggerCharacters: ['/']
+        };
+        this.currentDefaults = {};
     }
     /**
      * @description
@@ -25,16 +29,20 @@ export class CiscoIosCompletionProvider extends DefaultCompletionProvider {
         // Handles giving no Completion for Comments
         if (this.isCursorInComment(document, params))
             return CompletionList.create([], true);
+        // Read user settings once per request and apply default substitutions
+        const defaults = await this.getTokenDefaults();
+        this.currentDefaults = defaults;
         // acceptor creates and saves completion items from a given context
         // and stores it in the "completions" array
         const acceptor = (context, value) => {
-            const completionItem = this.fillCompletionItem(context, value);
+            const resolved = value.insertText
+                ? Object.assign(Object.assign({}, value), { insertText: this.applyDefaults(value.insertText, defaults) }) : value;
+            const completionItem = this.fillCompletionItem(context, resolved);
             if (completionItem) {
+                this.applyTemplateReplacement(document, params, completionItem);
                 completions.push(completionItem);
             }
         };
-        // for debugging
-        //console.log("-----------------------------------------------");
         //requests completion for every feature in every context
         for (const context of contexts) {
             for (const feature of context.features) {
@@ -55,19 +63,20 @@ export class CiscoIosCompletionProvider extends DefaultCompletionProvider {
      * @returns nothing (could return a maybepromise)
      */
     completionFor(context, next, acceptor) {
-        console.log(next);
-        let detail;
-        detail = details[next.type];
+        const detail = next.type ? commandDetails[next.type] : undefined;
         //if details exist for "next.type" create 
         // a completion item with the details
         if (detail) {
+            const insertText = (next.type && this.currentDefaults[next.type] !== undefined)
+                ? this.currentDefaults[next.type]
+                : detail.insert;
             acceptor(context, {
                 label: detail.label,
                 kind: detail.kind,
                 detail: detail.description,
                 sortText: "1",
                 insertTextFormat: 2,
-                insertText: detail.insert
+                insertText
             });
             //if no details were found use fallback instead
         }
@@ -118,6 +127,56 @@ export class CiscoIosCompletionProvider extends DefaultCompletionProvider {
             }
         }
         return false;
+    }
+    /**
+     * Reads token overrides from VS Code (Crill-IOS.defaults) and merges them
+     * over the defaults declared in Command_Details.json.
+     */
+    async getTokenDefaults() {
+        try {
+            const cfg = await this.services.shared.workspace.ConfigurationProvider
+                .getConfiguration('Crill-IOS', 'defaults');
+            const defaults = Object.assign({}, commandTokenDefaults);
+            if (cfg) {
+                for (const [key, value] of Object.entries(cfg)) {
+                    if (typeof value === 'string') {
+                        defaults[key] = value;
+                    }
+                }
+            }
+            return defaults;
+        }
+        catch (_a) {
+            return Object.assign({}, commandTokenDefaults);
+        }
+    }
+    /**
+     * Replaces placeholder tokens in an insert text with the user's configured defaults.
+     */
+    applyDefaults(insertText, defaults) {
+        return insertText.replace(/__([A-Za-z0-9_]+)__/g, (match, tokenName) => {
+            var _a;
+            return (_a = defaults[tokenName]) !== null && _a !== void 0 ? _a : match;
+        });
+    }
+    applyTemplateReplacement(document, params, item) {
+        if (typeof item.label !== 'string' || !item.label.startsWith('/') || !item.insertText) {
+            return;
+        }
+        const text = document.textDocument.getText();
+        const offset = document.textDocument.offsetAt(params.position);
+        let start = offset;
+        while (start > 0 && !/\s/.test(text[start - 1])) {
+            start--;
+        }
+        if (text[start] !== '/') {
+            return;
+        }
+        let end = offset;
+        while (end < text.length && !/\s/.test(text[end])) {
+            end++;
+        }
+        item.textEdit = TextEdit.replace(Range.create(document.textDocument.positionAt(start), document.textDocument.positionAt(end)), item.insertText);
     }
     /**
      * Sammelt die gewünschten Node values aus dem gesamten Dokument. In Visited werden die angesehenen Nodes gespeichert damit kein Loop erzeugt wird.

@@ -17,6 +17,7 @@ const TOKEN_MAP = {
     IP: { type: 'number' },
     SUBNETMASK: { type: 'number' },
     WILDCARDMASK: { type: 'number' },
+    ROUTER_ID: { type: 'number' },
     OSPF_PROCESS_NUMBER: { type: 'number' },
     OSPF_AREA_NUMBER: { type: 'number' },
     OSPF_PASSIVE_INTERFACE_NUMBER: { type: 'number' },

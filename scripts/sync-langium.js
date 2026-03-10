@@ -46,7 +46,8 @@ async function syncFiles() {
       'cisco-ios-validator.js',
       'main-browser.js',
       'cisco-ios-documentValidator.js',
-      'cisco-ios-hoverProvider.js'
+      'cisco-ios-hoverProvider.js',
+      './details/commandDetails.js'
     ];
     
     for (const file of filesToCopy) {
